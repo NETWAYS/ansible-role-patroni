@@ -11,3 +11,7 @@ rules:
     level: warning
   line-length:
     level: warning
+  indentation:
+    level: warning
+  commas:
+    level: warning
