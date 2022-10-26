@@ -8,6 +8,6 @@ rules:
     level: warn
   brackets:
     max-spaces-inside: 1
-    level: warn
+    level: warning
   line-length:
-    level: warn
+    level: warning
