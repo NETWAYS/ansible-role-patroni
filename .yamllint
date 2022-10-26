@@ -15,3 +15,5 @@ rules:
     level: warning
   commas:
     level: warning
+  new-lines:
+    level: warning
