@@ -6,3 +6,4 @@ skip_list:
 warn_list:
   - 'experimental'
   - 'name'
+  - jinja[spacing]
