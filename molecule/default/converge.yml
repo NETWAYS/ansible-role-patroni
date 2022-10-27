@@ -1,7 +1,6 @@
 ---
 - name: Converge
   hosts: all
-  vars: packages
   tasks:
     - name: "Include Patroni"
       include_role:
