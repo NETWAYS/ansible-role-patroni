@@ -9,6 +9,14 @@
 
 - meta: flush_handlers
 
+- name: Register journalctl -xe output
+  shell: 'journalctl -xe'
+  register: command_output
+                      
+- name: Print journalctl -xe output
+  debug:
+    msg: "{{ command_output.stdout_lines }}"
+
 - name: Ensure patroni is running
   systemd:
     name: patroni.service
