@@ -10,7 +10,6 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - /sbin/modprobe:/sbin/modprobe
-      - /usr/lib:/usr/lib
     privileged: true
     pre_build_image: true
 provisioner:
