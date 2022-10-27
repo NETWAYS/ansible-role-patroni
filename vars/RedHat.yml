@@ -29,6 +29,7 @@ __patroni_system_packages:
   - { name: "libzstd-devel",    state: "present" }
   - { name: "openssl",          state: "present" }
   - { name: "openssl-devel",    state: "present" }
+  - { name: "openssl11-libs",    state: "present" }
 
 __patroni_haproxy_packages:
   - { name: "haproxy", state: "present" }
