@@ -23,6 +23,15 @@
   notify:
     - restart patroni-watchdog
 
+  - name: Register journalctl -xe output
+    shell: 'journalctl -xe'
+    register: command_output
+
+                      
+  - name: Print journalctl -xe output
+    debug:
+      msg: "{{ command_output.stdout_lines }}"
+
 # Dirty hack. See https://bugs.launchpad.net/ubuntu/+source/watchdog/+bug/1448924
 - name: Enable watchdog daemon to start on boot
   file:
