@@ -10,8 +10,9 @@
 - meta: flush_handlers
 
 - name: Register journalctl -xe output
-  shell: 'journalctl -xe'
+  command: 'journalctl -xe'
   register: command_output
+  changed_when: false
 
 - name: Print journalctl -xe output
   debug:
