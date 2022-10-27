@@ -2,7 +2,7 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: Install libzstd for watchdog 
+    - name: Install libzstd for watchdog
       package:
         name: libzstd
     - name: "Include Patroni"
