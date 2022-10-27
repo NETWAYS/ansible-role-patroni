@@ -2,6 +2,10 @@
 - name: Converge
   hosts: all
   tasks:
+    - name: Install libzstd for watchdog 
+      package:
+        name: libzstd
+    
     - name: "Include Patroni"
       include_role:
         name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
