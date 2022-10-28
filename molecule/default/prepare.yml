@@ -2,10 +2,11 @@
 - name: Prepare
   hosts: all
   tasks:
-    - name: Refresh apt cache
-      apt:
+    - name: Refresh yum cache <= EL7
+      yum:
         update_cache: yes
-    - name: Install packages for EL 7
+      when: ansible_os_family == "RedHat" and ansible_distribution_major_version <= "7"
+    - name: Install required packages for EL 7
       package:
         name:
           - openssl11-libs
