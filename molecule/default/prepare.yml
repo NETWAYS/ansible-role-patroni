@@ -1,0 +1,13 @@
+---
+- name: Prepare
+  hosts: all
+  tasks:
+    - name: Refresh apt cache
+      apt:
+        update_cache: yes
+    - name: Install packages for EL 7
+      package:
+        name:
+          - openssl11-libs
+          - libzstd-devel
+      when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "7"

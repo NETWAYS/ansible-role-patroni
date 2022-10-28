@@ -9,15 +9,6 @@
 
 - meta: flush_handlers
 
-- name: Register journalctl -xe output
-  command: 'journalctl -xe'
-  register: command_output
-  changed_when: false
-
-- name: Print 'find / | grep libcrypto.so.1.1' output
-  debug:
-    msg: "{{ command_output.stdout_lines }}"
-
 - name: Ensure patroni is running
   systemd:
     name: patroni.service

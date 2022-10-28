@@ -6,7 +6,6 @@
     state: restarted
     daemon_reload: yes
     enabled: yes
-  ignore_errors: yes
   notify:
     - restart watchdog
 
