@@ -9,8 +9,8 @@ platforms:
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      - /sbin/modprobe:/sbin/modprobe
-      - /lib/modules:/lib/modules
+      - /sbin/modprobe:/sbin/modprobe:ro
+      - /lib/modules:/lib/modules:ro
     privileged: true
     pre_build_image: true
 provisioner:
