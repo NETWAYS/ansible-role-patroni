@@ -5,7 +5,7 @@
 
 An Ansible role which installs and configures [Patroni](https://github.com/zalando/patroni/) - HA solution for PostgreSQL.
 
-### Help Wanted! If you encountered any difficulties with deploying the role into your environment, noticed a bug or a missing feature or just have an idea of how this project could be enhanced, please feel free to file an issue.
+### NETWAYS managed branch
 
 ## Requirements
 
