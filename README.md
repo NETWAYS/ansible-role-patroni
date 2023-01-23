@@ -5,7 +5,7 @@
 
 An Ansible role which installs and configures [Patroni](https://github.com/zalando/patroni/) - HA solution for PostgreSQL.
 
-This branch is managed by NETWAYS.
+**This branch is managed by NETWAYS.**
 
 ## Requirements
 
@@ -37,4 +37,3 @@ MIT
 
 ## Author Information
 Kostiantyn Nemchenko <kostiantyn.nemchenko@gmail.com>
-
