@@ -51,6 +51,12 @@ jobs:
       - name: Install test dependencies.
         run: pip3 install ansible molecule[docker] docker
 
+      - name: Install test dependencies.
+        run: sudo apt update
+
+      - name: Install test dependencies.
+        run: sudo apt install libssl-dev
+
       - name: Run Molecule tests.
         run: molecule test -s default
         env:
