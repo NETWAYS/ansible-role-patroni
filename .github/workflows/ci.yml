@@ -58,7 +58,7 @@ jobs:
         run: sudo apt install libssl-dev
 
       - name: Run Molecule tests.
-        run: molecule test -s default --destroy never
+        run: molecule test -s default
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
