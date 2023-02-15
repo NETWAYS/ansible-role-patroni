@@ -41,15 +41,20 @@
     patroni_restapi_connect_address: "{{ inventory_hostname }}:{{ patroni_restapi_port }}"
 
   tasks:
-    #- name: "Set PostgreSQL major version by OS"
-    #  set_fact:
-    #    patroni_postgresql_version: 10
-    #  when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "7"
+    - name: "Set PostgreSQL major version by OS [Debian 9]"
+      set_fact:
+        patroni_postgresql_version: 9
+      when: ansible_os_family == "Debian" and ansible_distribution_major_version == "9"
 
-    - name: "Set PostgreSQL major version by OS"
+    - name: "Set PostgreSQL major version by OS [Rockylinux 8]"
       set_fact:
         patroni_postgresql_version: 13
       when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "8"
+
+    - name: "Set PostgreSQL major version by OS [Rockylinux 9]"
+      set_fact:
+        patroni_postgresql_version: 13
+      when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
 
     - name: "Include Patroni"
       include_role:
