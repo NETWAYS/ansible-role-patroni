@@ -7,7 +7,7 @@
     - name: "Set variables"
       set_fact:
         patroni_postgresql_version: 13
-      when: ansible_os_family == "RedHat" and ansible_distribution_major_version <= "8"
+      when: ansible_os_family == "RedHat" and ansible_distribution_major_version >= "8"
     - name: "Include Patroni"
       include_role:
         name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
