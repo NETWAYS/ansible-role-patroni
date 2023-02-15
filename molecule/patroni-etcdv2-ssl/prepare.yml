@@ -59,8 +59,8 @@
       "peer-trusted-ca-file": "{{ etcd_certs_dir }}/ca.crt"
 
   tasks:
-    - name: Refresh yum cache
-      yum:
+    - name: Refresh package cache
+      package:
         update_cache: yes
       when: ansible_os_family == "RedHat"
 

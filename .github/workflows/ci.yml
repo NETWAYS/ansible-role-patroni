@@ -71,10 +71,3 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
-
-#      - name: Run Molecule tests
-#        run: molecule test -s patroni-etcdv2-ssl --destroy never
-#        env:
-#          PY_COLORS: '1'
-#          ANSIBLE_FORCE_COLOR: '1'
-#          MOLECULE_DISTRO: ${{ matrix.distro }}

@@ -12,7 +12,7 @@
     patroni_install_from_pip: true
     patroni_install_haproxy: true
 
-    patroni_postgresql_version_latest: true
+    patroni_postgresql_version_latest: false
     patroni_postgresql_exists: false
     patroni_postgresql_connect_address: "{{ inventory_hostname }}:5432"
 
