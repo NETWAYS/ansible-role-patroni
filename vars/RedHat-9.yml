@@ -2,7 +2,7 @@
 
 __postgresql_yum_repo_url: "https://download.postgresql.org/pub/repos/yum/reporpms/{{ 'F' if ansible_distribution|lower == 'fedora' else 'EL' }}-{{ ansible_distribution_major_version }}-{{ ansible_architecture }}/{{ postgresql_yum_repo_pkg_name }}"
 __postgresql_yum_repo_pkg_name: "pgdg-redhat-repo-latest.noarch.rpm"
-__postgresql_yum_repo_pkg_version: "13.8-1PGDG.rhel8"
+__postgresql_yum_repo_pkg_version: "13.8-1PGDG.rhel9"
 __postgresql_yum_repo_gpg_key_url: "https://download.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG"
 
 __patroni_postgresql_data_dir: "/var/lib/pgsql/{{ patroni_postgresql_version }}/data"
