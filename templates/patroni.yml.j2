@@ -218,11 +218,22 @@ postgresql:
     {{ guc.option }}: {{ guc.value }}
   {% endfor %}
 {% endif %}
-{% if patroni_postgresql_pg_hba |d([], true) |length > 0 %}
+{% if patroni_postgresql_pg_hba |d([], true) |length > 0 or patroni_postgresql_pg_hba_include == true or patroni_postgresql_pg_hba_include_if_exists == true or patroni_postgresql_pg_hba_include_dir == true %}
   pg_hba:
-  {% for client in patroni_postgresql_pg_hba %}
+  {% if patroni_postgresql_pg_hba |d([], true) |length > 0 %}
+    {% for client in patroni_postgresql_pg_hba %}
     - {{ client.type }} {{ client.database }} {{ client.user }} {{ client.address |d(None) }} {{ client.method }} {{ client.options |d(None) }}
-  {% endfor %}
+    {% endfor %}
+  {% endif %}
+  {% if patroni_postgresql_pg_hba_include == true %}
+    - include {{ patroni_postgresql_pg_hba_include_path }}
+  {% endif %}
+  {% if patroni_postgresql_pg_hba_include_if_exists == true %}
+    - include_if_exists {{ patroni_postgresql_pg_hba_include_if_exists_path }}
+  {% endif %}
+  {% if patroni_postgresql_pg_hba_include_dir == true %}
+    - include_dir {{ patroni_postgresql_pg_hba_dir }}
+  {% endif %}
 {% endif %}
 {% if patroni_postgresql_pg_ident |d([], true) |length > 0 %}
   pg_ident:
