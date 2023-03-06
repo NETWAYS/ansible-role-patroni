@@ -42,6 +42,22 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#global-un
 - `patroni_namespace`: Namespace of the Patroni cluster (default: `/service/`)
 - `patroni_name`: Name of the Patroni node (default: `"{{ inventory_hostname }}"`)
 
+# Log
+
+Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#log
+
+- `patroni_log_destination`: The  (default: `stderr`) #TODO
+- `patroni_log_level`: The log level (default: `INFO`)
+- `patroni_log_format`: The format of the log: (default: `"%(asctime)s %(levelname)s: %(message)s"`)
+- `patroni_log_dateformat`: The dateformat of the log (default: `""`)
+- `patroni_log_max_queue_size`: The maximal queue size (defautl: `1000`)
+- `patroni_log_dir`: The log directory (default: `/var/log/patroni`)
+- `patroni_log_file_num`: 4
+- `patroni_log_file_size`: 25000000
+- `patroni_log_loggers`:
+  - { module: "patroni.postmaster", level: "WARNING" }
+  - { module: "urllib3",            level: "DEBUG" }
+
 ## Dependencies
 
 There are no dependencies for the role, but Patroni itself needs a DCS (Etcd, Consul, ZooKeeper or Exhibitor) to be installed and configured properly and it's your responsibility to make it up and running before using this role.
