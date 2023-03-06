@@ -73,5 +73,6 @@
   notify:
     - restart haproxy
   when:
-    - haproxy_config.changed | bool and
+    - patroni_install_haproxy and
+      haproxy_config.changed | bool and
       not patroni_handlers_disable | bool
