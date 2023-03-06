@@ -42,7 +42,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#global-un
 - `patroni_namespace`: Namespace of the Patroni cluster (default: `/service/`)
 - `patroni_name`: Name of the Patroni node (default: `"{{ inventory_hostname }}"`)
 
-# Log
+### Log
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#log
 
