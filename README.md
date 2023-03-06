@@ -47,8 +47,8 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#global-un
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#log
 
 - `patroni_log_destination`: The  (default: `stderr`) #TODO
-- `patroni_log_level`: The log level (default: `INFO`)
-- `patroni_log_format`: The format of the log: (default: `"%(asctime)s %(levelname)s: %(message)s"`)
+- `patroni_log_level`: Sets the general logging level. Default value is INFO (see https://docs.python.org/3.6/library/logging.html#levels) (default: `INFO`)
+- `patroni_log_format`: Sets the log formatting string. Default value is %(asctime)s %(levelname)s: %(message)s (see https://docs.python.org/3.6/library/logging.html#logrecord-attributes) (default: `"%(asctime)s %(levelname)s: %(message)s"`)
 - `patroni_log_dateformat`: Sets the datetime formatting string. (see https://docs.python.org/3.6/library/logging.html#logging.Formatter.formatTime) (default: `""`)
 - `patroni_log_max_queue_size`: Patroni is using two-step logging. Log records are written into the in-memory queue and there is a separate thread which pulls them from the queue and writes to stderr or file. The maximum size of the internal queue is limited by default by 1000 records, which is enough to keep logs for the past 1h20m. (default: `1000`)
 - `patroni_log_dir`: Directory to write application logs to. The directory must exist and be writable by the user executing Patroni. If you set this value, the application will retain 4 25MB logs by default. You can tune those retention values with `patroni_log_file_num` and `patroni_log_file_size` (default: `/var/log/patroni`)
