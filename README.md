@@ -22,6 +22,15 @@ This role requires root privileges, so tell ansible to use `become: true` in any
 - `patroni_config_file`: Filename of the Patroni configuration (default: `"{{ inventory_hostname }}.yml"`)
 - `patroni_system_user`: The Patroni system user (default: `postgres`)
 - `patroni_system_group`: The Patroni system group (default: `postgres`)
+- `patroni_backup_on_copy`: Create a backup before copying files on host (default: `true`)
+- `patroni_exec_start_pre`: Command executed before Patroni will be started (default: `"/bin/mkdir -m 2750 -p /var/run/postgresql/{{ patroni_postgresql_version }}-main.pg_stat_tmp"`)
+- `patroni_pip_packages`: Packages that will be installed with pip
+  - { name: "setuptools",                 state: "latest",  umask: "0022", executable: "pip3" }
+  - { name: "patroni[{{ patroni_dcs }}]", state: "present", umask: "0022", executable: "pip3" }
+- `patroni_replication_username`: PostgreSQL DB username for replication (default: `replicator`)
+- `patroni_replication_password`: PostgreSQL DB password for replication (default: `repuserpasswd`)
+- `patroni_superuser_username`: PostgreSQL DB username for master (default: `postgres`)
+- `patroni_superuser_password`: PostgreSQL DB password for master (default: `supersecretpostgrespasswd`)
 
 ## Dependencies
 
