@@ -12,16 +12,16 @@ This role requires root privileges, so tell ansible to use `become: true` in any
 
 ## Role Variables
 
-- patroni_postgresql_version: 11
-- patroni_postgresql_version_latest: false
-- patroni_postgresql_exists: false
-- patroni_install_from_pip: true
-- patroni_install_haproxy: false
-- patroni_install_postgresql_repo: true
-- patroni_config_dir: /etc/patroni
-- patroni_config_file: "{{ inventory_hostname }}.yml"
-- patroni_system_user: postgres
-- patroni_system_group: postgres
+- `patroni_postgresql_version`: The PostgreSQL version that will be installed (default: `11`)
+- `patroni_postgresql_version_latest`: Install latest major version of PostgreSQL (default: `false`)
+- `patroni_postgresql_exists`: Does PostgreSQL already exist? (default: `false`)
+- `patroni_install_from_pip`: Install Patroni with pip (default: `true`)
+- `patroni_install_haproxy`: Install HAProxy (default: `false`)
+- `patroni_install_postgresql_repo`: Configure PostgreSQL repository? (default: `true`)
+- `patroni_config_dir`: Path of Patroni configuration directory (default: `/etc/patroni`)
+- `patroni_config_file`: Filename of the Patroni configuration (default: `"{{ inventory_hostname }}.yml"`)
+- `patroni_system_user`: The Patroni system user (default: `postgres`)
+- `patroni_system_group`: The Patroni system group (default: `postgres`)
 
 ## Dependencies
 
