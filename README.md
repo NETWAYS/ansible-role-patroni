@@ -12,6 +12,8 @@ This role requires root privileges, so tell ansible to use `become: true` in any
 
 ## Role Variables
 
+### General
+
 - `patroni_postgresql_version`: The PostgreSQL version that will be installed (default: `11`)
 - `patroni_postgresql_version_latest`: Install latest major version of PostgreSQL (default: `false`)
 - `patroni_postgresql_exists`: Does PostgreSQL already exist? (default: `false`)
@@ -32,7 +34,10 @@ This role requires root privileges, so tell ansible to use `become: true` in any
 - `patroni_superuser_username`: PostgreSQL DB username for master (default: `postgres`)
 - `patroni_superuser_password`: PostgreSQL DB password for master (default: `supersecretpostgrespasswd`)
 
-# https://patroni.readthedocs.io/en/latest/SETTINGS.html#global-universal
+### Global/Universal
+
+Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#global-universal
+
 - `patroni_scope`: Scope of the Patroni cluster (default: `main`)
 - `patroni_namespace`: Namespace of the Patroni cluster (default: `/service/`)
 - `patroni_name`: Name of the Patroni node (default: `"{{ inventory_hostname }}"`)
