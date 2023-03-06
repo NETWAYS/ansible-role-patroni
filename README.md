@@ -32,6 +32,11 @@ This role requires root privileges, so tell ansible to use `become: true` in any
 - `patroni_superuser_username`: PostgreSQL DB username for master (default: `postgres`)
 - `patroni_superuser_password`: PostgreSQL DB password for master (default: `supersecretpostgrespasswd`)
 
+# https://patroni.readthedocs.io/en/latest/SETTINGS.html#global-universal
+- `patroni_scope`: Scope of the Patroni cluster (default: `main`)
+- `patroni_namespace`: Namespace of the Patroni cluster (default: `/service/`)
+- `patroni_name`: Name of the Patroni node (default: `"{{ inventory_hostname }}"`)
+
 ## Dependencies
 
 There are no dependencies for the role, but Patroni itself needs a DCS (Etcd, Consul, ZooKeeper or Exhibitor) to be installed and configured properly and it's your responsibility to make it up and running before using this role.
