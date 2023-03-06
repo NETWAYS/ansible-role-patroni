@@ -12,7 +12,16 @@ This role requires root privileges, so tell ansible to use `become: true` in any
 
 ## Role Variables
 
-Coming soon.
+- patroni_postgresql_version: 11
+- patroni_postgresql_version_latest: false
+- patroni_postgresql_exists: false
+- patroni_install_from_pip: true
+- patroni_install_haproxy: false
+- patroni_install_postgresql_repo: true
+- patroni_config_dir: /etc/patroni
+- patroni_config_file: "{{ inventory_hostname }}.yml"
+- patroni_system_user: postgres
+- patroni_system_group: postgres
 
 ## Dependencies
 
