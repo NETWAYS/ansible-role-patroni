@@ -54,9 +54,10 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#log
 - `patroni_log_dir`: Directory to write application logs to. The directory must exist and be writable by the user executing Patroni. If you set this value, the application will retain 4 25MB logs by default. You can tune those retention values with `patroni_log_file_num` and `patroni_log_file_size` (default: `/var/log/patroni`)
 - `patroni_log_file_num`: The number of application logs to retain (default: `4`)
 - `patroni_log_file_size`: Size of patroni.log file (in bytes) that triggers a log rolling (default: `25000000`)
-- `patroni_log_loggers`:
-  - { module: "patroni.postmaster", level: "WARNING" }
-  - { module: "urllib3",            level: "DEBUG" }
+- `patroni_log_loggers`: This section allows redefining logging level per python module.
+  Defaults:
+  - `{ module: "patroni.postmaster", level: "WARNING" }`
+  - `{ module: "urllib3", level: "DEBUG" }`
 
 ## Dependencies
 
