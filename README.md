@@ -61,19 +61,19 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#log
 ### REST API
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#rest-api
-`patroni_restapi_port`: The Port for the `patroni_restapi_port`. Default: `8008`
-`patroni_restapi_connect_address`: IP address (or hostname) and port, to access the Patroni’s REST API. Default: `"{{ ansible_host }}:{{ patroni_restapi_port }}"`
-`patroni_restapi_listen`: IP address (or hostname) and port that Patroni will listen to for the REST API. Default `"0.0.0.0:{{ patroni_restapi_port }}"`
-`patroni_restapi_username`: (optional): Username for authentication. Default `undefined`
-`patroni_restapi_password`: (optional): Password for authentication. Default `undefined`
-`patroni_restapi_certfile`: (optional): Specifies the file with the certificate in the PEM format. If the certfile is not specified or is left empty, the API server will work without SSL. Default: `undefined`
-`patroni_restapi_keyfile`: (optional): Specifies the file with the secret key in the PEM format. Default: `undefined`
-`patroni_restapi_keyfile_password`: (optional): Specifies a password for decrypting the keyfile. Default: `undefined`
-`patroni_restapi_cafile`: (optional): Specifies the file with the CA_BUNDLE with certificates of trusted CAs to use while verifying client certs. Default: `undefined`
-`patroni_restapi_ciphers`: (optional): Specifies the permitted cipher suites (e.g. “ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES128-GCM-SHA256:!SSLv1:!SSLv2:!SSLv3:!TLSv1:!TLSv1.1”). Default: `undefined`
-`patroni_restapi_verify_client`: (optional): `none` (default in Patroni), `optional` or `required`. When none REST API will not check client certificates. When required client certificates are required for all REST API calls. When optional client certificates are required for all unsafe REST API endpoints. Default: `undefined` 
-`patroni_restapi_http_extra_headers`: (optional): HTTP headers let the REST API server pass additional information with an HTTP response. Default: `undefined`
-`patroni_restapi_https_extra_headers`:  (optional): HTTPS headers let the REST API server pass additional information with an HTTP response when TLS is enabled. This will also pass additional information set in `patroni_restapi_http_extra_headers`. Default: `undefined`
+- `patroni_restapi_port`: The Port for the `patroni_restapi_port`. Default: `8008`
+- `patroni_restapi_connect_address`: IP address (or hostname) and port, to access the Patroni’s REST API. Default: `"{{ ansible_host }}:{{ patroni_restapi_port }}"`
+- `patroni_restapi_listen`: IP address (or hostname) and port that Patroni will listen to for the REST API. Default `"0.0.0.0:{{ patroni_restapi_port }}"`
+- `patroni_restapi_username`: (optional): Username for authentication. Default `undefined`
+- `patroni_restapi_password`: (optional): Password for authentication. Default `undefined`
+- `patroni_restapi_certfile`: (optional): Specifies the file with the certificate in the PEM format. If the certfile is not specified or is left empty, the API server will work without SSL. Default: `undefined`
+- `patroni_restapi_keyfile`: (optional): Specifies the file with the secret key in the PEM format. Default: `undefined`
+- `patroni_restapi_keyfile_password`: (optional): Specifies a password for decrypting the keyfile. Default: `undefined`
+- `patroni_restapi_cafile`: (optional): Specifies the file with the CA_BUNDLE with certificates of trusted CAs to use while verifying client certs. Default: `undefined`
+- `patroni_restapi_ciphers`: (optional): Specifies the permitted cipher suites (e.g. “ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES128-GCM-SHA256:!SSLv1:!SSLv2:!SSLv3:!TLSv1:!TLSv1.1”). Default: `undefined`
+- `patroni_restapi_verify_client`: (optional): `none` (default in Patroni), `optional` or `required`. When none REST API will not check client certificates. When required client certificates are required for all REST API calls. When optional client certificates are required for all unsafe REST API endpoints. Default: `undefined` 
+- `patroni_restapi_http_extra_headers`: (optional): HTTP headers let the REST API server pass additional information with an HTTP response. Default: `undefined`
+- `patroni_restapi_https_extra_headers`:  (optional): HTTPS headers let the REST API server pass additional information with an HTTP response when TLS is enabled. This will also pass additional information set in `patroni_restapi_http_extra_headers`. Default: `undefined`
 
 
 ## Dependencies
