@@ -20,8 +20,9 @@
       - { type: "local", database: "all", user: "all", address: "", method: "trust" }
       - { type: "host", database: "all", user: "all", address: "127.0.0.1/32", method: "trust" }
       - { type: "host", database: "all", user: "all", address: "::1/128", method: "trust" }
-      - { type: "host", database: "all", user: "replicator", address: "{{ hostvars['instance-1']['ansible_default_ipv4']['address'] }}/32", method: "trust" }
-      - { type: "host", database: "all", user: "replicator", address: "{{ hostvars['instance-2']['ansible_default_ipv4']['address'] }}/32", method: "trust" }
+      - { type: "host", database: "replication", user: "replicator", address: "{{ hostvars['instance-1']['ansible_default_ipv4']['address'] }}/32", method: "trust" }
+      - { type: "host", database: "replication", user: "replicator", address: "{{ hostvars['instance-2']['ansible_default_ipv4']['address'] }}/32", method: "trust" }
+      - { type: "host", database: "replication", user: "replicator", address: "127.0.0.1/32", method: "trust" }
 
     patroni_dcs: etcd
 
