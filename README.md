@@ -26,9 +26,9 @@ This role requires root privileges, so tell ansible to use `become: true` in any
 - `patroni_system_group`: The Patroni system group (default: `postgres`)
 - `patroni_backup_on_copy`: Create a backup before copying files on host (default: `true`)
 - `patroni_exec_start_pre`: Command executed before Patroni will be started (default: `"/bin/mkdir -m 2750 -p /var/run/postgresql/{{ patroni_postgresql_version }}-main.pg_stat_tmp"`)
-- `patroni_pip_packages`: Packages that will be installed with pip
-  - { name: "setuptools",                 state: "latest",  umask: "0022", executable: "pip3" }
-  - { name: "patroni[{{ patroni_dcs }}]", state: "present", umask: "0022", executable: "pip3" }
+- `patroni_pip_packages`: Packages that will be installed with pip. Defaults:
+  - `{ name: "setuptools",                 state: "latest",  umask: "0022", executable: "pip3" }`
+  - `{ name: "patroni[{{ patroni_dcs }}]", state: "present", umask: "0022", executable: "pip3" }`
 - `patroni_replication_username`: PostgreSQL DB username for replication (default: `replicator`)
 - `patroni_replication_password`: PostgreSQL DB password for replication (default: `repuserpasswd`)
 - `patroni_superuser_username`: PostgreSQL DB username for master (default: `postgres`)
@@ -54,8 +54,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#log
 - `patroni_log_dir`: Directory to write application logs to. The directory must exist and be writable by the user executing Patroni. If you set this value, the application will retain 4 25MB logs by default. You can tune those retention values with `patroni_log_file_num` and `patroni_log_file_size` (default: `/var/log/patroni`)
 - `patroni_log_file_num`: The number of application logs to retain (default: `4`)
 - `patroni_log_file_size`: Size of patroni.log file (in bytes) that triggers a log rolling (default: `25000000`)
-- `patroni_log_loggers`: This section allows redefining logging level per python module.
-  Defaults:
+- `patroni_log_loggers`: This section allows redefining logging level per python module. Defaults:
   - `{ module: "patroni.postmaster", level: "WARNING" }`
   - `{ module: "urllib3", level: "DEBUG" }`
 
