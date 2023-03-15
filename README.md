@@ -275,4 +275,5 @@ MIT
 
 ## Author Information
 Kostiantyn Nemchenko <kostiantyn.nemchenko@gmail.com>
+
 Daniel Patrick <daniel.patrick@netways.de> or <dani.p1991@gmail.com>
