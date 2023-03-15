@@ -248,7 +248,7 @@ Read more here https://patroni.readthedocs.io/en/latest/SETTINGS.html#watchdog o
 
 ### HAProxy
 
-- `patroni_haproxy_servers`: List of HAProxy servers. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_haproxy_servers`: List of HAProxy servers. See `defaults/main.yml` for examples. (**Default:** `[]`)
 - `patroni_haproxy_leader_listen_port`: HAProxy leader listen port. (**Default:** `5000`)
 - `patroni_haproxy_replica_listen_port`: HAProxy replica listen port. (**Default:** `5001`)
 - `patroni_haproxy_stats_listen_port`: HAProxy stats listen port. (**Default:** `7000`)
