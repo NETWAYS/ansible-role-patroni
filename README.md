@@ -7,9 +7,26 @@ An Ansible role which installs and configures [Patroni](https://github.com/zalan
 **This branch is managed by NETWAYS.**
 
 ## Overview
-- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#requirements
+
+- [**Requirements**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#requirements)
 - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#role-variables
   - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#general
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#globaluniversal
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#log
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#rest-api
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#etcd
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#etcdv3
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#consul
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#zookeeper
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#bootstrap-configuration
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#bootstrap
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#postgresql
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#watchdog
+  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#haproxy
+- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#dependencies
+- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#example-playbook
+- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#license
+- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#author-information
 
 
 ## Requirements
@@ -250,7 +267,7 @@ Currently, it is supposed that a DCS is prepared. Otherwise, you can try one of 
     - hosts: postgresql-servers
       become: yes
       roles:
-        - kostiantyn-nemchenko.patroni
+        - netways.patroni
 
 ## License
 
@@ -258,3 +275,4 @@ MIT
 
 ## Author Information
 Kostiantyn Nemchenko <kostiantyn.nemchenko@gmail.com>
+Daniel Patrick <daniel.patrick@netways.de> or <dani.p1991@gmail.com>
