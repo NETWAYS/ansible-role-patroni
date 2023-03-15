@@ -66,8 +66,8 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#rest-api
 - `patroni_restapi_port`: The Port for the `patroni_restapi_port`. (**Default:** `8008`)
 - `patroni_restapi_connect_address`: IP address (or hostname) and port, to access the Patroni’s REST API. (**Default:** `"{{ ansible_host }}:{{ patroni_restapi_port }}"`)
 - `patroni_restapi_listen`: IP address (or hostname) and port that Patroni will listen to for the REST API. (*Default* `"0.0.0.0:{{ patroni_restapi_port }}"`)
-- `patroni_restapi_username`: (optional): Username for authentication. (*Default* `undefined`)
-- `patroni_restapi_password`: (optional): Password for authentication. Default `undefined`
+- `patroni_restapi_username`: (optional): Username for authentication. (**Default** `undefined`)
+- `patroni_restapi_password`: (optional): Password for authentication. (**Default** `undefined`)
 - `patroni_restapi_certfile`: (optional): Specifies the file with the certificate in the PEM format. If the certfile is not specified or is left empty, the API server will work without SSL. (**Default:** `undefined`)
 - `patroni_restapi_keyfile`: (optional): Specifies the file with the secret key in the PEM format. (**Default:** `undefined`)
 - `patroni_restapi_keyfile_password`: (optional): Specifies a password for decrypting the keyfile. (**Default:** `undefined`)
