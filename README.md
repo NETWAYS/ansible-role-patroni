@@ -100,7 +100,23 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcdv3
 
 - `patroni_etcd_config_section`: If you want that Patroni works with Etcd cluster via protocol version 3, you need to use the `etcd3` section in the Patroni configuration file. All configuration parameters are the same as for `etcd`. (**Default:** `etcd`)
 
+# Consul
 
+Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
+
+- `patroni_consul_host`: The host:port for the Consul local agent. (**Default:** `"127.0.0.1:{{ patroni_consul_port | default(8500) }}"`)
+- `patroni_consul_port`: (optional) Consul port. (**Default:**  8500)
+- `patroni_consul_url`: URL for the Consul local agent, in format: http(s)://host:port. (**Default:** "")
+- `patroni_consul_scheme`: (optional) http or https, defaults to http. (**Default:** http)
+- `patroni_consul_token`: (optional) ACL token. (**Default:** "")
+- `patroni_consul_verify`: (optional) whether to verify the SSL certificate for HTTPS requests. (**Default:** "")
+- `patroni_consul_cacert`: (optional) The ca certificate. If present it will enable validation. (**Default:** "")
+- `patroni_consul_cert`: (optional) file with the client certificate. (**Default:** "")
+- `patroni_consul_key`: (optional) file with the client key. Can be empty if the key is part of cert. (**Default:** "")
+- `patroni_consul_dc`: (optional) Datacenter to communicate with. By default the datacenter of the host is used. (**Default:** "")
+- `patroni_consul_checks`: (optional) list of Consul health checks used for the session. By default an empty list is used. (**Default:** "")
+- `patroni_consul_register_service`: (optional) whether or not to register a service with the name defined by the scope parameter and the tag master, primary, replica, or standby-leader depending on the node’s role. Defaults to false. (**Default:** false)
+- `patroni_consul_service_check_interval`: (optional) how often to perform health check against registered url. (**Default:** 5s)
 
 ## Dependencies
 
