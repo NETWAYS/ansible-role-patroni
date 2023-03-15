@@ -48,7 +48,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#global-un
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#log
 
-- `patroni_log_destination`: The  (**Default:** `stderr`) #TODO
+- `patroni_log_destination`: The  (**Default:** `stderr`)
 - `patroni_log_level`: Sets the general logging level. Default value is INFO (see https://docs.python.org/3.6/library/logging.html#levels) (**Default:** `INFO`)
 - `patroni_log_format`: Sets the log formatting string. Default value is %(asctime)s %(levelname)s: %(message)s (see https://docs.python.org/3.6/library/logging.html#logrecord-attributes) (**Default:** `"%(asctime)s %(levelname)s: %(message)s"`)
 - `patroni_log_dateformat`: Sets the datetime formatting string. (see https://docs.python.org/3.6/library/logging.html#logging.Formatter.formatTime) (**Default:** `""`)
