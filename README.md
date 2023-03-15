@@ -274,6 +274,6 @@ Currently, it is supposed that a DCS is prepared. Otherwise, you can try one of 
 MIT
 
 ## Author Information
-Kostiantyn Nemchenko <kostiantyn.nemchenko@gmail.com>
 
-Daniel Patrick <daniel.patrick@netways.de> or <dani.p1991@gmail.com>
+- Kostiantyn Nemchenko <kostiantyn.nemchenko@gmail.com>
+- Daniel Patrick <daniel.patrick@netways.de> or <dani.p1991@gmail.com>
