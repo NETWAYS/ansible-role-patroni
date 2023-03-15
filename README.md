@@ -228,7 +228,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#postgresq
 - `patroni_postgresql_recovery_conf`: Additional configuration settings written to `recovery.conf` when configuring follower. There is no recovery.conf anymore in PostgreSQL 12, but you may continue using this section, because Patroni handles it transparently. (**Default:** `[]`)
 - `patroni_postgresql_parameters`: List of configuration settings for Postgres. **Default:**
   - `- { option: "unix_socket_directories", value: "/var/run/postgresql" }`
-- `patroni_postgresql_pg_hba`: List of pg_hba.conf settings. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_postgresql_pg_hba`: List of `pg_hba.conf` settings. See `defaults/main.yml` for examples. (**Default:** `[]`)
 - `patroni_postgresql_pg_ident`: List of pg_ident.conf settings. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_postgresql_pg_ctl_timeout`: How long should pg_ctl wait when doing start, stop or restart. (**Default:** `60`)
 - `patroni_postgresql_remove_data_directory_on_rewind_failure`: If this option is enabled, Patroni will remove the PostgreSQL data directory and recreate the replica. Otherwise it will try to follow the new leader.  (**Default:** `false`)
