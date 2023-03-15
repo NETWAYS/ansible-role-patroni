@@ -77,7 +77,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#rest-api
 - `patroni_restapi_http_extra_headers`: (optional): HTTP headers let the REST API server pass additional information with an HTTP response. (**Default:** `undefined`)
 - `patroni_restapi_https_extra_headers`:  (optional): HTTPS headers let the REST API server pass additional information with an HTTP response when TLS is enabled. This will also pass additional information set in `patroni_restapi_http_extra_headers`. (**Default:** `undefined`)
 
-## etcd
+### etcd
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcd
 
@@ -94,13 +94,13 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcd
 - `patroni_etcd_cert`: (optional) file with the client certificate. (**Default:** "")
 - `patroni_etcd_key`: (optional) file with the client key. Can be empty if the key is part of cert. (**Default:** "")
 
-## etcdv3
+### etcdv3
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcdv3
 
 - `patroni_etcd_config_section`: If you want that Patroni works with Etcd cluster via protocol version 3, you need to use the `etcd3` section in the Patroni configuration file. All configuration parameters are the same as for `etcd`. (**Default:** `etcd`)
 
-## Consul
+### Consul
 
 Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
 
@@ -118,12 +118,12 @@ Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
 - `patroni_consul_register_service`: (optional) whether or not to register a service with the name defined by the scope parameter and the tag master, primary, replica, or standby-leader depending on the node’s role. Defaults to false. (**Default:** false)
 - `patroni_consul_service_check_interval`: (optional) how often to perform health check against registered url. (**Default:** 5s)
 
-# Zookeeper
+### Zookeeper
 
 Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#zookeeper
 - `patroni_zookeeper_hosts`: Comma separated list of ZooKeeper cluster members: “‘host1:port1’,’host2:port2’,’etc…’”. It is important to quote every single entity!. 127.0.0.1:2181
 
-# Bootstrap configuration
+### Bootstrap configuration
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#bootstrap-configuration
 
@@ -161,6 +161,8 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#bootstrap
 - `patroni_bootstrap_dcs_postgresql_pg_hba`: PostgreSQL pg_hba.conf parameters. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_bootstrap_dcs_postgresql_pg_ident`: PostgreSQL pg_ident.conf. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_bootstrap_dcs_slots`: DCS slots parameters. See defaults/main.yml for examples. (**Default:** [])
+
+
 
 ## Dependencies
 
