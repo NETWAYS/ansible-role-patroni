@@ -162,6 +162,24 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#bootstrap
 - `patroni_bootstrap_dcs_postgresql_pg_ident`: PostgreSQL pg_ident.conf. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_bootstrap_dcs_slots`: DCS slots parameters. See defaults/main.yml for examples. (**Default:** [])
 
+### Bootstrap
+
+Read more here: https://patroni.readthedocs.io/en/latest/replica_bootstrap.html#bootstrap
+
+- `patroni_bootstrap_method_name`: Custom bootstrap method name. (**Default:** `""`)
+- `patroni_bootstrap_method_command`: Bootstrap command. (**Default:** `""`)
+- `patroni_bootstrap_method_keep_existing_recovery_conf`: If keep_existing_recovery_conf is defined and set to True, Patroni will not remove the existing recovery.conf file if it exists. (**Default:** `false`)
+- `patroni_bootstrap_method_recovery_conf`: If a recovery_conf block is defined in the same section as the custom bootstrap method, Patroni will generate a recovery.conf before starting the newly bootstrapped instance. (**Default:** `[]`)
+- `patroni_bootstrap_initdb`: A special initdb method is available to trigger the default behavior, in which case method parameter can be omitted altogether. **Default:** 
+  - `{ option: "encoding", value: "UTF8" }`
+  - `{ option: "data-checksums" }`
+- `patroni_bootstrap_pg_hba`: Bootstrap pg_hba. (**Default:** `[]`)
+- `patroni_bootstrap_users`: PostgreSQL/Patroni superuser and replication username and password.**Default:** 
+  - `- { name: "{{ patroni_superuser_username }}",   password: "{{ patroni_superuser_password }}",   options: [] }`
+  - `- { name: "{{ patroni_replication_username }}", password: "{{ patroni_replication_password }}", options: ['replication'] }`
+- `patroni_postgresql_use_unix_socket`: Use unix socket. (**Default:** `true`)
+- `patroni_postgresql_listen`: Listen address. (**Default:** `0.0.0.0:5432`)
+- `patroni_postgresql_connect_address`: Connect address. (**Default:** `"{{ ansible_host }}:5432"`)
 
 
 ## Dependencies
