@@ -106,7 +106,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcd
 
 - `patroni_etcd_host`: The host:port for the etcd endpoint. (**Default:** `""`)
 - `patroni_etcd_hosts`: List of etcd endpoint in format host1:port1,host2:port2,etc… Could be a comma separated string or an actual yaml list. (**Default:** `127.0.0.1:2379`)
-- `patroni_etcd_use_proxies`: If this parameter is set to true, Patroni will consider hosts as a list of proxies and will not perform a topology discovery of etcd cluster. (**Default:** `false`)
+- `patroni_etcd_use_proxies`: If this parameter is set to `true`, Patroni will consider hosts as a list of proxies and will not perform a topology discovery of etcd cluster. (**Default:** `false`)
 - `patroni_etcd_url`: URL for the etcd. (**Default:** `""`)
 - `patroni_etcd_proxy`: Proxy url for the etcd. If you are connecting to the etcd using proxy, use this parameter instead of url. (**Default:** `""`)
 - `patroni_etcd_srv`: Domain to search the SRV record(s) for cluster autodiscovery. Patroni will try to query these SRV service names for specified domain (in that order until first success): _etcd-client-ssl, _etcd-client, _etcd-ssl, _etcd, _etcd-server-ssl, _etcd-server. (**Default:** `""`)
