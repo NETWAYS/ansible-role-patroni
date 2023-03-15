@@ -181,6 +181,54 @@ Read more here: https://patroni.readthedocs.io/en/latest/replica_bootstrap.html#
 - `patroni_postgresql_listen`: Listen address. (**Default:** `0.0.0.0:5432`)
 - `patroni_postgresql_connect_address`: Connect address. (**Default:** `"{{ ansible_host }}:5432"`)
 
+# PostgreSQL
+
+Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#postgresql
+
+- `patroni_postgresql_authentication`: Authentication section. **Default:**
+  - `- { type: "superuser", username: "{{ patroni_superuser_username }}", password: "{{ patroni_superuser_password }}" }`
+  - `- { type: "replication", username: "{{ patroni_replication_username }}", password: "{{ patroni_replication_password }}" }`
+
+- `patroni_postgresql_callbacks_dir`: Callback scripts directory to run on certain actions. Patroni will pass the action, role and cluster name. (**Default:** `callbacks`)
+- `patroni_postgresql_callbacks`:
+  - `- { event: "on_reload",      script: "" }`
+  - `- { event: "on_restart",     script: "" }`
+  - `- { event: "on_role_change", script: "" }`
+  - `- { event: "on_start",       script: "" }`
+  - `- { event: "on_stop",        script: "" }`
+
+- `patroni_postgresql_create_replica_methods`: An ordered list of the create methods for turning a Patroni node into a new replica. “basebackup” is the default method. See defaults/main.myl for examples. **Default:**
+  - `- basebackup`
+- `patroni_postgresql_pgbackrest`: pgbackrest configuration. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_postgresql_wal_e`: wal-e configuration. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_postgresql_basebackup`: basebackup configurations. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_postgresql_recovery_conf`: Additional configuration settings written to recovery.conf when configuring follower. There is no recovery.conf anymore in PostgreSQL 12, but you may continue using this section, because Patroni handles it transparently. (**Default:** `[]`)
+- `patroni_postgresql_parameters`: List of configuration settings for Postgres. **Default:**
+  - `- { option: "unix_socket_directories", value: "/var/run/postgresql" }`
+- `patroni_postgresql_pg_hba`: List of pg_hba.conf settings. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_postgresql_pg_ident`: List of pg_ident.conf settings. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_postgresql_pg_ctl_timeout`: How long should pg_ctl wait when doing start, stop or restart. (**Default:** `60`)
+- `patroni_postgresql_remove_data_directory_on_rewind_failure`: If this option is enabled, Patroni will remove the PostgreSQL data directory and recreate the replica. Otherwise it will try to follow the new leader.  (**Default:** `false`)
+- `patroni_postgresql_remove_data_directory_on_diverged_timelines`: Patroni will remove the PostgreSQL data directory and recreate the replica if it notices that timelines are diverging and the former primary can not start streaming from the new primary. This option is useful when pg_rewind can not be used. (**Default:** `false`)
+
+# https://patroni.readthedocs.io/en/latest/SETTINGS.html#watchdog
+# https://patroni.readthedocs.io/en/latest/watchdog.html
+- `patroni_watchdog_mode`: off, automatic or required. When off watchdog is disabled. When automatic watchdog will be used if available, but ignored if it is not. When required the node will not become a leader unless watchdog can be successfully enabled. Use quotes for 'off' value. (**Default:** `automatic`)
+- `patroni_watchdog_device`: Path to watchdog device. (**Default:** `/dev/watchdog`)
+- `patroni_watchdog_safety_margin`: Number of seconds of safety margin between watchdog triggering and leader key expiration. (**Default:** `5`)
+- `patroni_tags`: **Default:**
+  - `- { name: "nofailover",    value: "false" }`
+  - `- { name: "noloadbalance", value: "false" }`
+  - `- { name: "clonefrom",     value: "false" }`
+  - `- { name: "nosync",        value: "false" }`
+  - `- { name: "replicatefrom", value: "" }`
+
+# HAProxy
+
+- `patroni_haproxy_servers`: List of HAProxy servers. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_haproxy_leader_listen_port`: HAProxy leader listen port. (**Default:** `5000`)
+- `patroni_haproxy_replica_listen_port`: HAProxy replica listen port. (**Default:** `5001`)
+- `patroni_haproxy_stats_listen_port`: HAProxy stats listen port. (**Default:** `7000`)
 
 ## Dependencies
 
