@@ -81,18 +81,18 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#rest-api
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcd
 
-- `patroni_etcd_host`: The host:port for the etcd endpoint. (**Default:** "")
-- `patroni_etcd_hosts`: List of etcd endpoint in format host1:port1,host2:port2,etc… Could be a comma separated string or an actual yaml list. (**Default:** 127.0.0.1:2379)
-- `patroni_etcd_use_proxies`: If this parameter is set to true, Patroni will consider hosts as a list of proxies and will not perform a topology discovery of etcd cluster. (**Default:** false)
-- `patroni_etcd_url`: URL for the etcd. (**Default:** "")
-- `patroni_etcd_proxy`: Proxy url for the etcd. If you are connecting to the etcd using proxy, use this parameter instead of url. (**Default:** "")
-- `patroni_etcd_srv`: Domain to search the SRV record(s) for cluster autodiscovery. Patroni will try to query these SRV service names for specified domain (in that order until first success): _etcd-client-ssl, _etcd-client, _etcd-ssl, _etcd, _etcd-server-ssl, _etcd-server. (**Default:** "")
-- `patroni_etcd_protocol`:  (optional) http or https, if not specified http is used. If the `patroni_etcd_url` or `patroni_etcd_proxy` is specified - will take protocol from them. (**Default:** http)
-- `patroni_etcd_username`: (optional) username for etcd authentication. (**Default:** "")
-- `patroni_etcd_password`: (optional) password for etcd authentication. (**Default:** "")
-- `patroni_etcd_cacert`: (optional) The ca certificate. If present it will enable validation. (**Default:** "")
-- `patroni_etcd_cert`: (optional) file with the client certificate. (**Default:** "")
-- `patroni_etcd_key`: (optional) file with the client key. Can be empty if the key is part of cert. (**Default:** "")
+- `patroni_etcd_host`: The host:port for the etcd endpoint. (**Default:** `""`)
+- `patroni_etcd_hosts`: List of etcd endpoint in format host1:port1,host2:port2,etc… Could be a comma separated string or an actual yaml list. (**Default:** `127.0.0.1:2379`)
+- `patroni_etcd_use_proxies`: If this parameter is set to true, Patroni will consider hosts as a list of proxies and will not perform a topology discovery of etcd cluster. (**Default:** `false`)
+- `patroni_etcd_url`: URL for the etcd. (**Default:** `""`)
+- `patroni_etcd_proxy`: Proxy url for the etcd. If you are connecting to the etcd using proxy, use this parameter instead of url. (**Default:** `""`)
+- `patroni_etcd_srv`: Domain to search the SRV record(s) for cluster autodiscovery. Patroni will try to query these SRV service names for specified domain (in that order until first success): _etcd-client-ssl, _etcd-client, _etcd-ssl, _etcd, _etcd-server-ssl, _etcd-server. (**Default:** `""`)
+- `patroni_etcd_protocol`:  (optional) http or https, if not specified http is used. If the `patroni_etcd_url` or `patroni_etcd_proxy` is specified - will take protocol from them. (**Default:** `http`)
+- `patroni_etcd_username`: (optional) username for etcd authentication. (**Default:** `""`)
+- `patroni_etcd_password`: (optional) password for etcd authentication. (**Default:** `""`)
+- `patroni_etcd_cacert`: (optional) The ca certificate. If present it will enable validation. (**Default:** `""`)
+- `patroni_etcd_cert`: (optional) file with the client certificate. (**Default:** `""`)
+- `patroni_etcd_key`: (optional) file with the client key. Can be empty if the key is part of cert. (**Default:** `""`)
 
 ### etcdv3
 
@@ -105,18 +105,18 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcdv3
 Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
 
 - `patroni_consul_host`: The host:port for the Consul local agent. (**Default:** `"127.0.0.1:{{ patroni_consul_port | default(8500) }}"`)
-- `patroni_consul_port`: (optional) Consul port. (**Default:**  8500)
-- `patroni_consul_url`: URL for the Consul local agent, in format: http(s)://host:port. (**Default:** "")
-- `patroni_consul_scheme`: (optional) http or https, defaults to http. (**Default:** http)
-- `patroni_consul_token`: (optional) ACL token. (**Default:** "")
-- `patroni_consul_verify`: (optional) whether to verify the SSL certificate for HTTPS requests. (**Default:** "")
-- `patroni_consul_cacert`: (optional) The ca certificate. If present it will enable validation. (**Default:** "")
-- `patroni_consul_cert`: (optional) file with the client certificate. (**Default:** "")
-- `patroni_consul_key`: (optional) file with the client key. Can be empty if the key is part of cert. (**Default:** "")
-- `patroni_consul_dc`: (optional) Datacenter to communicate with. By default the datacenter of the host is used. (**Default:** "")
-- `patroni_consul_checks`: (optional) list of Consul health checks used for the session. By default an empty list is used. (**Default:** "")
-- `patroni_consul_register_service`: (optional) whether or not to register a service with the name defined by the scope parameter and the tag master, primary, replica, or standby-leader depending on the node’s role. Defaults to false. (**Default:** false)
-- `patroni_consul_service_check_interval`: (optional) how often to perform health check against registered url. (**Default:** 5s)
+- `patroni_consul_port`: (optional) Consul port. (**Default:**  `8500`)
+- `patroni_consul_url`: URL for the Consul local agent, in format: http(s)://host:port. (**Default:** `""`)
+- `patroni_consul_scheme`: (optional) http or https, defaults to http. (**Default:** `http`)
+- `patroni_consul_token`: (optional) ACL token. (**Default:** `""`)
+- `patroni_consul_verify`: (optional) whether to verify the SSL certificate for HTTPS requests. (**Default:** `""`)
+- `patroni_consul_cacert`: (optional) The ca certificate. If present it will enable validation. (**Default:** `""`)
+- `patroni_consul_cert`: (optional) file with the client certificate. (**Default:** `""`)
+- `patroni_consul_key`: (optional) file with the client key. Can be empty if the key is part of cert. (**Default:** `""`)
+- `patroni_consul_dc`: (optional) Datacenter to communicate with. By default the datacenter of the host is used. (**Default:** `""`)
+- `patroni_consul_checks`: (optional) list of Consul health checks used for the session. By default an empty list is used. (**Default:** `""`)
+- `patroni_consul_register_service`: (optional) whether or not to register a service with the name defined by the scope parameter and the tag master, primary, replica, or standby-leader depending on the node’s role. Defaults to false. (**Default:** `false`)
+- `patroni_consul_service_check_interval`: (optional) how often to perform health check against registered url. (**Default:** `5s`)
 
 ### Zookeeper
 
@@ -160,7 +160,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#bootstrap
 - `patroni_bootstrap_dcs_postgresql_recovery_conf`: PostgreSQL recovery.conf parameters. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_bootstrap_dcs_postgresql_pg_hba`: PostgreSQL pg_hba.conf parameters. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_bootstrap_dcs_postgresql_pg_ident`: PostgreSQL pg_ident.conf. See defaults/main.yml for examples. (**Default:** `[]`)
-- `patroni_bootstrap_dcs_slots`: DCS slots parameters. See defaults/main.yml for examples. (**Default:** [])
+- `patroni_bootstrap_dcs_slots`: DCS slots parameters. See defaults/main.yml for examples. (**Default:** `[]`)
 
 ### Bootstrap
 
@@ -169,13 +169,13 @@ Read more here: https://patroni.readthedocs.io/en/latest/replica_bootstrap.html#
 - `patroni_bootstrap_method_name`: Custom bootstrap method name. (**Default:** `""`)
 - `patroni_bootstrap_method_command`: Bootstrap command. (**Default:** `""`)
 - `patroni_bootstrap_method_keep_existing_recovery_conf`: If keep_existing_recovery_conf is defined and set to True, Patroni will not remove the existing recovery.conf file if it exists. (**Default:** `false`)
-- `patroni_bootstrap_method_recovery_conf`: If a recovery_conf block is defined in the same section as the custom bootstrap method, Patroni will generate a recovery.conf before starting the newly bootstrapped instance. (**Default:** `[]`)
+- `patroni_bootstrap_method_recovery_conf`: If a recovery_conf block is defined in the same section as the custom bootstrap method, Patroni will generate a recovery.conf before starting the newly bootstrapped instance. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_bootstrap_initdb`: A special initdb method is available to trigger the default behavior, in which case method parameter can be omitted altogether. **Default:** 
   - `{ option: "encoding", value: "UTF8" }`
   - `{ option: "data-checksums" }`
-- `patroni_bootstrap_pg_hba`: Bootstrap pg_hba. (**Default:** `[]`)
+- `patroni_bootstrap_pg_hba`: Bootstrap pg_hba. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_bootstrap_users`: PostgreSQL/Patroni superuser and replication username and password.**Default:** 
-  - `- { name: "{{ patroni_superuser_username }}",   password: "{{ patroni_superuser_password }}",   options: [] }`
+  - `- { name: "{{ patroni_superuser_username }}", password: "{{ patroni_superuser_password }}", options: [] }`
   - `- { name: "{{ patroni_replication_username }}", password: "{{ patroni_replication_password }}", options: ['replication'] }`
 - `patroni_postgresql_use_unix_socket`: Use unix socket. (**Default:** `true`)
 - `patroni_postgresql_listen`: Listen address. (**Default:** `0.0.0.0:5432`)
