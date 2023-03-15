@@ -181,7 +181,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/replica_bootstrap.html#
 - `patroni_postgresql_listen`: Listen address. (**Default:** `0.0.0.0:5432`)
 - `patroni_postgresql_connect_address`: Connect address. (**Default:** `"{{ ansible_host }}:5432"`)
 
-# PostgreSQL
+### PostgreSQL
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#postgresql
 
@@ -211,8 +211,8 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#postgresq
 - `patroni_postgresql_remove_data_directory_on_rewind_failure`: If this option is enabled, Patroni will remove the PostgreSQL data directory and recreate the replica. Otherwise it will try to follow the new leader.  (**Default:** `false`)
 - `patroni_postgresql_remove_data_directory_on_diverged_timelines`: Patroni will remove the PostgreSQL data directory and recreate the replica if it notices that timelines are diverging and the former primary can not start streaming from the new primary. This option is useful when pg_rewind can not be used. (**Default:** `false`)
 
-# https://patroni.readthedocs.io/en/latest/SETTINGS.html#watchdog
-# https://patroni.readthedocs.io/en/latest/watchdog.html
+### watchdog
+Read more here https://patroni.readthedocs.io/en/latest/SETTINGS.html#watchdog or here https://patroni.readthedocs.io/en/latest/watchdog.html
 - `patroni_watchdog_mode`: off, automatic or required. When off watchdog is disabled. When automatic watchdog will be used if available, but ignored if it is not. When required the node will not become a leader unless watchdog can be successfully enabled. Use quotes for 'off' value. (**Default:** `automatic`)
 - `patroni_watchdog_device`: Path to watchdog device. (**Default:** `/dev/watchdog`)
 - `patroni_watchdog_safety_margin`: Number of seconds of safety margin between watchdog triggering and leader key expiration. (**Default:** `5`)
@@ -223,7 +223,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#postgresq
   - `- { name: "nosync",        value: "false" }`
   - `- { name: "replicatefrom", value: "" }`
 
-# HAProxy
+### HAProxy
 
 - `patroni_haproxy_servers`: List of HAProxy servers. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_haproxy_leader_listen_port`: HAProxy leader listen port. (**Default:** `5000`)
