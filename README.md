@@ -9,24 +9,24 @@ An Ansible role which installs and configures [Patroni](https://github.com/zalan
 ## Overview
 
 - [**Requirements**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#requirements)
-- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#role-variables
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#general
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#globaluniversal
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#log
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#rest-api
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#etcd
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#etcdv3
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#consul
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#zookeeper
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#bootstrap-configuration
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#bootstrap
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#postgresql
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#watchdog
-  - https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#haproxy
-- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#dependencies
-- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#example-playbook
-- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#license
-- https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#author-information
+- [**Role variables**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#role-variables)
+  - [**General**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#general)
+  - [**Global/Universal**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#globaluniversal)
+  - [**Log**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#log)
+  - [**REST API**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#rest-api)
+  - [**etcd**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#etcd)
+  - [**etcdv3**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#etcdv3)
+  - [**Consul**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#consul)
+  - [**Zookeeper**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#zookeeper)
+  - [**Bootstrap configuration**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/)role-variables#bootstrap-configuration
+  - [**Bootstrap**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#bootstrap)
+  - [**PostgreSQL**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#postgresql)
+  - [**watchdog**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#watchdog)
+  - [**HAProxy**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#haproxy)
+- [**Dependencies**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#dependencies)
+- [**Example Playbook**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#example-playbook)
+- [**License**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#license)
+- [**Author Information**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#author-information)
 
 
 ## Requirements
