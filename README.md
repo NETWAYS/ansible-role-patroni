@@ -94,13 +94,13 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcd
 - `patroni_etcd_cert`: (optional) file with the client certificate. (**Default:** "")
 - `patroni_etcd_key`: (optional) file with the client key. Can be empty if the key is part of cert. (**Default:** "")
 
-# etcdv3
+## etcdv3
 
 Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcdv3
 
 - `patroni_etcd_config_section`: If you want that Patroni works with Etcd cluster via protocol version 3, you need to use the `etcd3` section in the Patroni configuration file. All configuration parameters are the same as for `etcd`. (**Default:** `etcd`)
 
-# Consul
+## Consul
 
 Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
 
