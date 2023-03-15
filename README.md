@@ -110,7 +110,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#etcd
 - `patroni_etcd_url`: URL for the etcd. (**Default:** `""`)
 - `patroni_etcd_proxy`: Proxy url for the etcd. If you are connecting to the etcd using proxy, use this parameter instead of url. (**Default:** `""`)
 - `patroni_etcd_srv`: Domain to search the SRV record(s) for cluster autodiscovery. Patroni will try to query these SRV service names for specified domain (in that order until first success): _etcd-client-ssl, _etcd-client, _etcd-ssl, _etcd, _etcd-server-ssl, _etcd-server. (**Default:** `""`)
-- `patroni_etcd_protocol`:  (optional) http or https, if not specified http is used. If the `patroni_etcd_url` or `patroni_etcd_proxy` is specified - will take protocol from them. (**Default:** `http`)
+- `patroni_etcd_protocol`:  (optional) `http` or `https`, if not specified `http` is used. If the `patroni_etcd_url` or `patroni_etcd_proxy` is specified - will take protocol from them. (**Default:** `http`)
 - `patroni_etcd_username`: (optional) username for etcd authentication. (**Default:** `""`)
 - `patroni_etcd_password`: (optional) password for etcd authentication. (**Default:** `""`)
 - `patroni_etcd_cacert`: (optional) The ca certificate. If present it will enable validation. (**Default:** `""`)
