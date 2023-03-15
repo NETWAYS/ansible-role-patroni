@@ -118,6 +118,61 @@ Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
 - `patroni_consul_register_service`: (optional) whether or not to register a service with the name defined by the scope parameter and the tag master, primary, replica, or standby-leader depending on the node’s role. Defaults to false. (**Default:** false)
 - `patroni_consul_service_check_interval`: (optional) how often to perform health check against registered url. (**Default:** 5s)
 
+# Zookeeper
+
+Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#zookeeper
+- `patroni_zookeeper_hosts`: Comma separated list of ZooKeeper cluster members: “‘host1:port1’,’host2:port2’,’etc…’”. It is important to quote every single entity!. 127.0.0.1:2181
+
+# Bootstrap configuration
+
+Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#bootstrap-configuration
+
+- `patroni_bootstrap_dcs_ttl`: TTL for DCS (**Default:** `30`)
+- `patroni_bootstrap_dcs_loop_wait`: Loop wait for DCS (**Default:** `10`)
+- `patroni_bootstrap_dcs_retry_timeout`: Retry timeout for DCS (**Default:** `10`)
+- `patroni_bootstrap_dcs_maximum_lag_on_failover`: Maximum lag on failover (**Default:** `1048576`)
+- `patroni_bootstrap_dcs_master_start_timeout`: Start timeout for master (**Default:** `300`)
+- `patroni_bootstrap_dcs_synchronous_mode`: Synchronous mode for DCS (**Default:** `false`)
+- `patroni_bootstrap_dcs_synchronous_mode_strict`: Strict synchronous mode (**Default:** `false`)
+- `patroni_bootstrap_dcs_check_timeline`: Check timeline (**Default:** `false`)
+- `patroni_bootstrap_dcs_standby_cluster`: Configuration of a standby cluster. **Defaults:**
+  - `- { option: "host",                     value: "" }`
+  - `- { option: "port",                     value: "" }`
+  - `- { option: "primary_slot_name",        value: "" }`
+  - `- { option: "create_replica_methods",   value: "" }`
+  - `- { option: "restore_command",          value: "" }`
+  - `- { option: "archive_cleanup_command",  value: "" }`
+  - `- { option: "recovery_min_apply_delay", value: "" }`
+
+- `patroni_bootstrap_dcs_postgresql_use_pg_rewind`: Use PostgreSQL pg_rewind (**Default:** `false`)
+- `patroni_bootstrap_dcs_postgresql_use_slots`: Use PostgreSQL slots (**Default:** `true`)
+- `patroni_bootstrap_dcs_postgresql_parameters`: PostgreSQL parameters. **Defaults:**
+  - `- { option: "max_connections",           value: "100" }`
+  - `- { option: "max_locks_per_transaction", value: "64" }`
+  - `- { option: "max_worker_processes",      value: "8" }`
+  - `- { option: "max_prepared_transactions", value: "0" }`
+  - `- { option: "wal_level",                 value: "replica" }`
+  - `- { option: "wal_log_hints",             value: "on" }`
+  - `- { option: "track_commit_timestamp",    value: "off" }`
+  - `- { option: "max_wal_senders",           value: "10" }`
+  - `- { option: "max_replication_slots",     value: "10" }`
+  - `- { option: "wal_keep_segments",         value: "8" }`
+
+- `patroni_bootstrap_dcs_postgresql_recovery_conf`: PostgreSQL recovery.conf parameters (**Default:** `[]`)
+  - `#- { option: "standby_mode",    value: "on" }`
+  - `#- { option: "restore_command", value: "cp ../wal_archive/%f %p" }`
+
+- `patroni_bootstrap_dcs_postgresql_pg_hba`: PostgreSQL pg_hba.conf parameters (**Default:** `[]`)
+  - `#- { type: "host", database: "all",         user: "all",                                address: "0.0.0.0/0", method: "ident", options: "map=omicron" }`
+  - `#- { type: "host", database: "replication", user: "{{ patroni_replication_username }}", address: "0.0.0.0/0", method: "md5" }`
+
+`patroni_bootstrap_dcs_postgresql_pg_ident`: PostgreSQL pg_ident.conf (**Default:** `[]`)
+  - `#- { mapname: "omicron", sysuser: "robert", pguser: "bob" }`
+
+`patroni_bootstrap_dcs_slots`: DCS slots parameters (**Default:** [])
+  - `#-{ name: "permanent_physical_1", type: "physical" }`
+  - `#-{ name: "permanent_logical_1",  type: "logical", database: "foo", plugin: "pgoutput" }`
+
 ## Dependencies
 
 There are no dependencies for the role, but Patroni itself needs a DCS (Etcd, Consul, ZooKeeper or Exhibitor) to be installed and configured properly and it's your responsibility to make it up and running before using this role.
