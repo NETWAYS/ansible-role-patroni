@@ -222,7 +222,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#postgresq
 
 - `patroni_postgresql_create_replica_methods`: An ordered list of the create methods for turning a Patroni node into a new replica. “basebackup” is the default method. See defaults/main.myl for examples. **Default:**
   - `- basebackup`
-- `patroni_postgresql_pgbackrest`: pgbackrest configuration. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_postgresql_pgbackrest`: pgbackrest configuration. See `defaults/main.yml` for examples. (**Default:** `[]`)
 - `patroni_postgresql_wal_e`: wal-e configuration. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_postgresql_basebackup`: basebackup configurations. See defaults/main.yml for examples. (**Default:** `[]`)
 - `patroni_postgresql_recovery_conf`: Additional configuration settings written to recovery.conf when configuring follower. There is no recovery.conf anymore in PostgreSQL 12, but you may continue using this section, because Patroni handles it transparently. (**Default:** `[]`)
