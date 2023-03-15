@@ -236,7 +236,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#postgresq
 
 ### watchdog
 Read more here https://patroni.readthedocs.io/en/latest/SETTINGS.html#watchdog or here https://patroni.readthedocs.io/en/latest/watchdog.html
-- `patroni_watchdog_mode`: off, automatic or required. When off watchdog is disabled. When automatic watchdog will be used if available, but ignored if it is not. When required the node will not become a leader unless watchdog can be successfully enabled. Use quotes for 'off' value. (**Default:** `automatic`)
+- `patroni_watchdog_mode`: `off`, `automatic` or `required`. When `off` watchdog is disabled. When `automatic` watchdog will be used if available, but ignored if it is not. When `required` the node will not become a leader unless watchdog can be successfully enabled. Use quotes for `'off'` value. (**Default:** `automatic`)
 - `patroni_watchdog_device`: Path to watchdog device. (**Default:** `/dev/watchdog`)
 - `patroni_watchdog_safety_margin`: Number of seconds of safety margin between watchdog triggering and leader key expiration. (**Default:** `5`)
 - `patroni_tags`: **Default:**
