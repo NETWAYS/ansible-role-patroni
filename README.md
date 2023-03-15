@@ -9,7 +9,7 @@ An Ansible role which installs and configures [Patroni](https://github.com/zalan
 ## Overview
 1. https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#requirements
 2. https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#role-variables
-  2.1 https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#general
+  1. https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#general
 
 
 ## Requirements
