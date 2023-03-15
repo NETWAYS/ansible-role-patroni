@@ -18,7 +18,7 @@ An Ansible role which installs and configures [Patroni](https://github.com/zalan
   - [**etcdv3**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#etcdv3)
   - [**Consul**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#consul)
   - [**Zookeeper**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#zookeeper)
-  - [**Bootstrap configuration**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/)role-variables#bootstrap-configuration
+  - [**Bootstrap configuration**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#bootstrap-configuration)
   - [**Bootstrap**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#bootstrap)
   - [**PostgreSQL**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#postgresql)
   - [**watchdog**](https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#watchdog)
