@@ -6,6 +6,12 @@ An Ansible role which installs and configures [Patroni](https://github.com/zalan
 
 **This branch is managed by NETWAYS.**
 
+## Overview
+1. https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#requirements
+2. https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#role-variables
+  2.1 https://github.com/NETWAYS/ansible-role-patroni/tree/readme/role-variables#general
+
+
 ## Requirements
 
 This role requires root privileges, so tell ansible to use `become: true` in any [convenient way](http://docs.ansible.com/ansible/latest/become.html) for you.
