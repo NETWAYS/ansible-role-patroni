@@ -121,7 +121,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
 ### Zookeeper
 
 Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#zookeeper
-- `patroni_zookeeper_hosts`: Comma separated list of ZooKeeper cluster members: “‘host1:port1’,’host2:port2’,’etc…’”. It is important to quote every single entity!. 127.0.0.1:2181
+- `patroni_zookeeper_hosts`: Comma separated list of ZooKeeper cluster members: “‘host1:port1’,’host2:port2’,’etc…’”. It is important to quote every single entity!. (**Default:** `127.0.0.1:2181`)
 
 ### Bootstrap configuration
 
