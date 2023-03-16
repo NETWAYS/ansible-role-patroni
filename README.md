@@ -130,7 +130,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
 - `patroni_consul_host`: The host:port for the Consul local agent. (**Default:** `"127.0.0.1:{{ patroni_consul_port | default(8500) }}"`)
 - `patroni_consul_port`: (optional) Consul port. (**Default:**  `8500`)
 - `patroni_consul_url`: URL for the Consul local agent, in format: http(s)://host:port. (**Default:** `""`)
-- `patroni_consul_scheme`: (optional) http or https, defaults to http. (**Default:** `http`)
+- `patroni_consul_scheme`: (optional) `http` or `https`. (**Default:** `http`)
 - `patroni_consul_token`: (optional) ACL token. (**Default:** `""`)
 - `patroni_consul_verify`: (optional) whether to verify the SSL certificate for HTTPS requests. (**Default:** `""`)
 - `patroni_consul_cacert`: (optional) The ca certificate. If present it will enable validation. (**Default:** `""`)
