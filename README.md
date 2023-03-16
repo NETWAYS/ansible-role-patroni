@@ -220,7 +220,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/SETTINGS.html#postgresq
   - `- { event: "on_start",       script: "" }`
   - `- { event: "on_stop",        script: "" }`
 
-- `patroni_postgresql_create_replica_methods`: An ordered list of the create methods for turning a Patroni node into a new replica. “basebackup” is the default method. See defaults/main.myl for examples. **Default:**
+- `patroni_postgresql_create_replica_methods`: An ordered list of the create methods for turning a Patroni node into a new replica. See `defaults/main.myl` for examples. **Default:**
   - `- basebackup`
 - `patroni_postgresql_pgbackrest`: pgbackrest configuration. See `defaults/main.yml` for examples. (**Default:** `[]`)
 - `patroni_postgresql_wal_e`: wal-e configuration. See `defaults/main.yml` for examples. (**Default:** `[]`)
