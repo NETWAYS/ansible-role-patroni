@@ -138,7 +138,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/ENVIRONMENT.html#consul
 - `patroni_consul_key`: (optional) file with the client key. Can be empty if the key is part of cert. (**Default:** `""`)
 - `patroni_consul_dc`: (optional) Datacenter to communicate with. By default the datacenter of the host is used. (**Default:** `""`)
 - `patroni_consul_checks`: (optional) list of Consul health checks used for the session. By default an empty list is used. (**Default:** `""`)
-- `patroni_consul_register_service`: (optional) whether or not to register a service with the name defined by the scope parameter and the tag master, primary, replica, or standby-leader depending on the node’s role. Defaults to false. (**Default:** `false`)
+- `patroni_consul_register_service`: (optional) whether or not to register a service with the name defined by the scope parameter and the tag master, primary, replica, or standby-leader depending on the node’s role. (**Default:** `false`)
 - `patroni_consul_service_check_interval`: (optional) how often to perform health check against registered url. (**Default:** `5s`)
 
 ### Zookeeper
