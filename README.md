@@ -196,7 +196,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/replica_bootstrap.html#
 - `patroni_bootstrap_initdb`: A special initdb method is available to trigger the default behavior, in which case method parameter can be omitted altogether. **Default:** 
   - `{ option: "encoding", value: "UTF8" }`
   - `{ option: "data-checksums" }`
-- `patroni_bootstrap_pg_hba`: Bootstrap pg_hba. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_bootstrap_pg_hba`: Bootstrap pg_hba. See `defaults/main.yml` for examples. (**Default:** `[]`)
 - `patroni_bootstrap_users`: PostgreSQL/Patroni superuser and replication username and password.**Default:** 
   - `- { name: "{{ patroni_superuser_username }}", password: "{{ patroni_superuser_password }}", options: [] }`
   - `- { name: "{{ patroni_replication_username }}", password: "{{ patroni_replication_password }}", options: ['replication'] }`
