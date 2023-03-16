@@ -192,7 +192,7 @@ Read more here: https://patroni.readthedocs.io/en/latest/replica_bootstrap.html#
 - `patroni_bootstrap_method_name`: Custom bootstrap method name. (**Default:** `""`)
 - `patroni_bootstrap_method_command`: Bootstrap command. (**Default:** `""`)
 - `patroni_bootstrap_method_keep_existing_recovery_conf`: If `keep_existing_recovery_conf` is defined and set to `True`, Patroni will not remove the existing `recovery.conf` file if it exists. (**Default:** `false`)
-- `patroni_bootstrap_method_recovery_conf`: If a recovery_conf block is defined in the same section as the custom bootstrap method, Patroni will generate a recovery.conf before starting the newly bootstrapped instance. See defaults/main.yml for examples. (**Default:** `[]`)
+- `patroni_bootstrap_method_recovery_conf`: If a `recovery_conf` block is defined in the same section as the custom bootstrap method, Patroni will generate a `recovery.conf` before starting the newly bootstrapped instance. See `defaults/main.yml` for examples. (**Default:** `[]`)
 - `patroni_bootstrap_initdb`: A special initdb method is available to trigger the default behavior, in which case method parameter can be omitted altogether. **Default:** 
   - `{ option: "encoding", value: "UTF8" }`
   - `{ option: "data-checksums" }`
