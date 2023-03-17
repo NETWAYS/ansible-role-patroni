@@ -38,7 +38,7 @@ This role requires root privileges, so tell ansible to use `become: true` in any
 ### General
 
 - `patroni_postgresql_version`: The PostgreSQL version that will be installed (**Default**: `11`)
-- `patroni_postgresql_version_latest`: Install latest major version of PostgreSQL (**Default:** `false`)
+- `patroni_postgresql_version_latest`: If `patroni_postgresql_version_latest` is set to true, it will install the latest minor version of the major version of PostgreSQL which has been set with `patroni_postgresql_version` that is available. (**Default:** `false`)
 - `patroni_postgresql_exists`: Does PostgreSQL already exist? (**Default:** `false`)
 - `patroni_install_from_pip`: Install Patroni with pip (**Default:** `true`)
 - `patroni_install_haproxy`: Install HAProxy (**Default:** `false`)
