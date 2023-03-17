@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/NETWAYS/ansible-role-patroni/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/NETWAYS/ansible-role-patroni/actions/workflows/ci.yml)
 
-An Ansible role which installs and configures [Patroni](https://github.com/zalando/patroni/) - HA solution for PostgreSQL.
+[This Ansible role](https://github.com/NETWAYS/ansible-role-patroni) installs and configures [Patroni](https://github.com/zalando/patroni/) - HA solution for PostgreSQL.
 
 **This branch is managed by NETWAYS.**
 
