@@ -1,0 +1,51 @@
+---
+
+- name: Verify
+  hosts: all
+  tasks:
+
+    - name: Verify etcd has a leader
+      shell: >
+        curl https://127.0.0.1:2379/metrics
+        --cert /opt/certs-etcd/{{ inventory_hostname }}-etcd-server.crt
+        --key /opt/certs-etcd/{{ inventory_hostname }}.key -ks \
+        | grep has_leader \
+        | tail -n1
+      register: etcd_has_leader
+
+    - name:
+      debug:
+        msg: "{{ etcd_has_leader }}"
+
+    - name: Fail etcd cluster has no leader
+      fail:
+        msg: "Fail: Cluster has no leader"
+      when: 'not "etcd_server_has_leader 1" in etcd_has_leader.stdout'
+
+    - name: Verify Patroni instance-1 is running
+      shell: >
+        patronictl
+        -c /etc/patroni/{{ inventory_hostname }}.yml
+        topology
+        |
+        grep instance-1
+      register: instance_1_status
+
+    - name: Fail if Patroni node instance-1 is not running
+      fail:
+        msg: "Fail: instance-1 is not running"
+      when: 'not "running" in instance_1_status.stdout'
+
+    - name: Verify Patroni instance-2 is running
+      shell: >
+        patronictl
+        -c /etc/patroni/{{ inventory_hostname }}.yml
+        topology
+        |
+        grep instance-2
+      register: instance_2_status
+
+    - name: Fail if Patroni node instance-2 is not running
+      fail:
+        msg: "Fail: instance-2 is not running"
+      when: 'not "running" in instance_2_status.stdout'
