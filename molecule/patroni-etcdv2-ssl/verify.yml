@@ -35,6 +35,15 @@
       debug:
         msg: "{{ instance_1_status }}"
 
+    - name: Get journalctl -xe
+      shell: >
+        journalctl -xe
+      register: journalctl
+
+    - name:
+      debug:
+        msg: "{{ journalctl.stdout_lines }}"
+
     - name: Fail if Patroni node instance-1 is not running
       fail:
         msg: "Fail: instance-1 is not running"
@@ -52,6 +61,15 @@
     - name:
       debug:
         msg: "{{ instance_2_status }}"
+
+    - name: Get journalctl -xe
+      shell: >
+        journalctl -xe
+      register: journalctl
+
+    - name:
+      debug:
+        msg: "{{ journalctl.stdout_lines }}"
 
     - name: Fail if Patroni node instance-2 is not running
       fail:
