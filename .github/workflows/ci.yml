@@ -37,14 +37,10 @@ jobs:
       max-parallel: 1
       matrix:
         distro:
-          #- debian9    # TODO
-          #- debian10   # TODO
           - rockylinux8
           - rockylinux9
         scenario:
-          # - patroni-default   #TODO
           - patroni-etcdv2-ssl
-          #- patroni-etcdv3-nossl   # TODO
           - patroni-etcdv3-ssl
 
     steps:
