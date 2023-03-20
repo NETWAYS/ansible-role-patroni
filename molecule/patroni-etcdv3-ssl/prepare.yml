@@ -70,13 +70,13 @@
           ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
 
     - name: Add instance-1 to /etc/hosts
-      ansible.builtin.shell: echo "172.17.0.2 instance-1" >> /etc/hosts
+      ansible.builtin.shell: echo "{{ hostvars['instance-1']['ansible_default_ipv4']['address'] }} instance-1" >> /etc/hosts
       when:
         - ansible_os_family == "RedHat" and ansible_distribution_major_version == "8" or
           ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
 
     - name: Add instance-2 to /etc/hosts
-      ansible.builtin.shell: echo "172.17.0.3 instance-2" >> /etc/hosts
+      ansible.builtin.shell: echo "{{ hostvars['instance-2']['ansible_default_ipv4']['address'] }} instance-2" >> /etc/hosts
       when:
         - ansible_os_family == "RedHat" and ansible_distribution_major_version == "8" or
           ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
