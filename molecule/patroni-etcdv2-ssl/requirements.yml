@@ -11,3 +11,6 @@
 - name: netways.ca
   src: https://github.com/NETWAYS/ansible-role-ca
   scm: git
+collections:
+  - name: community.docker
+  - name: community.general
