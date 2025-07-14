@@ -1,7 +1,7 @@
 ---
-#- name: etcd
-#  src: https://github.com/githubixx/ansible-role-etcd
-#  scm: git
+# - name: etcd
+#   src: https://github.com/githubixx/ansible-role-etcd
+#   scm: git
 
 - name: githubixx.etcd
   src: https://github.com/NETWAYS/ansible-role-etcd
@@ -15,3 +15,4 @@
 collections:
   - name: community.docker
   - name: community.general
+
