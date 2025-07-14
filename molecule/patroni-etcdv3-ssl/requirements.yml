@@ -2,8 +2,8 @@
 #- name: etcd
 #  src: https://github.com/githubixx/ansible-role-etcd
 #  scm: git
+collections:
 - name: community.docker
-  version: ">=3.10.2"
 
 - name: githubixx.etcd
   src: https://github.com/NETWAYS/ansible-role-etcd
