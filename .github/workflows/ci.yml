@@ -14,12 +14,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python 3.
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.8'
 
       - name: Install test dependencies.
         run: pip3 install yamllint ansible-lint
@@ -37,8 +37,8 @@ jobs:
       max-parallel: 1
       matrix:
         distro:
-          #- debian9    # TODO
-          #- debian10   # TODO
+          #- debian10    # TODO
+          - debian11   # TODO
           #- rockylinux8
           - rockylinux9
         scenario:
@@ -49,15 +49,17 @@ jobs:
 
     steps:
       - name: Check out the codebase.
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python 3.
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.8'
 
-      - name: Install test dependencies.
-        run: pip3 install ansible molecule-plugins[docker] docker
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install ansible ansible-lint molecule molecule-plugins[docker] pytest passlib
 
       - name: Install test dependencies.
         run: sudo apt update
