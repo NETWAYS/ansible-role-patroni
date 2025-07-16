@@ -39,7 +39,7 @@ jobs:
         distro:
           #- debian9    # TODO
           #- debian10   # TODO
-          - rockylinux8
+          #- rockylinux8
           - rockylinux9
         scenario:
           # - patroni-default   #TODO
