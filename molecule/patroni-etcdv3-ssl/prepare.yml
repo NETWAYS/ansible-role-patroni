@@ -107,24 +107,3 @@
     - name: "Include githubixx/ansible-role-etcd role"
       include_role:
         name: githubixx.etcd
-
-    - name: Install Python 3.9 on RockyLinux 8
-      package:
-        name: python39
-        state: present
-      when: ansible_distribution == "Rocky" and ansible_distribution_major_version == "8"
-
-    - name: Set python3 default to python3.9 using alternatives
-      command: alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 100
-      when: ansible_distribution == "Rocky" and ansible_distribution_major_version == "8"
-
-    - name: Ensure pip is installed for python3.9
-      package:
-        name: python39-pip
-        state: present
-      when: ansible_distribution == "Rocky" and ansible_distribution_major_version == "8"
-
-    - name: Use python3.9 for Ansible
-      set_fact:
-        ansible_python_interpreter: /usr/bin/python3.9
-      when: ansible_distribution == "Rocky" and ansible_distribution_major_version == "8"
