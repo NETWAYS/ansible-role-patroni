@@ -7,8 +7,6 @@ platforms:
   - name: instance-1
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-rockylinux9}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
-    environment:
-      ANSIBLE_PYTHON_INTERPRETER: /usr/bin/python3.9
     volumes:
       # watchdog
       #- /sbin/modprobe:/sbin/modprobe:ro
@@ -21,8 +19,6 @@ platforms:
   - name: instance-2
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-rockylinux9}-ansible:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
-    environment:
-      ANSIBLE_PYTHON_INTERPRETER: /usr/bin/python3.9
     volumes:
       # watchdog
       #- /sbin/modprobe:/sbin/modprobe:ro
