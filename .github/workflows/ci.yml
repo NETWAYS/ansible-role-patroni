@@ -25,6 +25,9 @@ jobs:
       - name: Install test dependencies.
         run: pip3 install yamllint ansible-lint
 
+      - name: Downgrade requests egg
+        run pip3 install requests==2.31.0 --force-reinstall
+
       - name: Lint code.
         run: |
           yamllint .
