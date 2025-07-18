@@ -58,7 +58,7 @@ jobs:
           python-version: '3.9'
 
       - name: Set up Docker
-        uses: docker/setup-docker@v2
+        uses: docker/setup-buildx-action@v3
         with:
           daemon-config: |
             {
