@@ -33,8 +33,6 @@ jobs:
   molecule-default:
     name: Molecule (default)
     runs-on: ubuntu-latest
-    env:
-      DOCKER_HOST: unix:///var/run/docker.sock
     needs: lint
     strategy:
       max-parallel: 1
@@ -59,13 +57,16 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: Set up Docker
+        uses: docker/setup-docker-action@v4
+
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install ansible ansible-lint molecule molecule-plugins[docker] pytest passlib
 
       - name: Downgrade modules for Docker communication
-        run: pip3 install requests==2.31.0 requests-unixsocket==0.3.0 docker==5.0.3 --force-reinstall
+        run: pip3 install 'requests<=2.31.0' 'requests-unixsocket<=0.3.0' 'docker<6.0.0' --force-reinstall
 
       - name: Install test dependencies.
         run: sudo apt update
@@ -79,4 +80,3 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
-          DOCKER_HOST: unix:///var/run/docker.sock
