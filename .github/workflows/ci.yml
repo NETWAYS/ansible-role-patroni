@@ -36,6 +36,8 @@ jobs:
   molecule-default:
     name: Molecule (default)
     runs-on: ubuntu-latest
+    env:
+      DOCKER_HOST: unix:///var/run/docker.sock
     needs: lint
     strategy:
       max-parallel: 1
