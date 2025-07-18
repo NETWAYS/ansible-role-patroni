@@ -58,7 +58,19 @@ jobs:
           python-version: '3.9'
 
       - name: Set up Docker
-        uses: docker/setup-docker-action@v4
+        uses: docker/setup-docker@v2
+        with:
+          daemon-config: |
+            {
+              "experimental": true,
+              "features": {
+                "buildkit": true
+              }
+            }
+      
+      - name: Start Docker service
+        run: |
+          sudo systemctl start docker
 
       - name: Install dependencies
         run: |
