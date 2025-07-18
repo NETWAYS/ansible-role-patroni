@@ -67,7 +67,7 @@ jobs:
                 "buildkit": true
               }
             }
-      
+
       - name: Start Docker service
         run: |
           sudo systemctl start docker
