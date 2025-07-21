@@ -14,6 +14,7 @@ platforms:
     cgroupns_mode: host
     privileged: true
     pre_build_image: true
+    #network_mode: bridge
     groups:
       - patroni
   - name: instance-2
@@ -26,6 +27,7 @@ platforms:
     cgroupns_mode: host
     privileged: true
     pre_build_image: true
+    #network_mode: bridge
     groups:
       - patroni
 provisioner:
