@@ -56,11 +56,6 @@
         patroni_postgresql_version: 13
       when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
 
-    - name: "Show molecule dir"
-      ansible.builtin.debug:
-        msg: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }} is the molecule project directory"
-
     - name: "Include Patroni"
       include_role:
-        #name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') | basename }}"
         name: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}"

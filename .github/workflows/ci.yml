@@ -17,11 +17,9 @@ jobs:
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
-      #- name: Set up Python 3.9
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
-          #python-version: '3.9'
           python-version: '3.10'
 
       - name: Install test dependencies.
@@ -40,35 +38,24 @@ jobs:
       max-parallel: 1
       matrix:
         distro:
-          #- debian10    # TODO
-          - debian11   # TODO
-          #- rockylinux8
-          #- rockylinux9
+          - debian11
+          - debian12
+          - rockylinux8
+          - rockylinux9
         scenario:
-          # - patroni-default   #TODO
+          #- patroni-default   #TODO
           - patroni-etcdv2-ssl
           #- patroni-etcdv3-nossl   # TODO
-          #- patroni-etcdv3-ssl
+          - patroni-etcdv3-ssl
 
     steps:
       - name: Check out the codebase.
         uses: actions/checkout@v4
 
-      #- name: Set up Python 3.9
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
-          #python-version: '3.9'
           python-version: '3.10'
-
-#      - name: Set up Docker
-#        uses: docker/setup-buildx-action@v3
-
-#      - name: Start Docker service
-#        run: |
-#          sudo systemctl start docker
-      #- name: Downgrade modules for Docker communication
-      #  run: pip3 install 'requests<2.32.0' 'docker<6.0.0' --force-reinstall
 
       - name: Install test dependencies.
         run: sudo apt update
@@ -76,13 +63,9 @@ jobs:
       - name: Install test dependencies.
         run: sudo apt install -y libssl-dev
 
-      #- name: Install Podman
-      #  run: sudo apt install -y podman
-
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          #python3 -m pip install ansible ansible-lint molecule molecule-plugins[docker] pytest passlib
           python3 -m pip install ansible ansible-lint molecule molecule-docker pytest passlib requests
 
       - name: Run Molecule tests
@@ -91,4 +74,3 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
-          #DOCKER_HOST: unix:///var/run/docker.sock
