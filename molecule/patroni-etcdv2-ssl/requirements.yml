@@ -5,7 +5,7 @@ roles:
     src: https://github.com/NETWAYS/ansible-role-etcd
     scm: git
     version: feature-etcd_ipv4_address
-  
+
   - name: netways.ca
     src: https://github.com/NETWAYS/ansible-role-ca
     scm: git
