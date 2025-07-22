@@ -65,7 +65,7 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          python3 -m pip install ansible-core ansible-lint molecule molecule-docker pytest passlib requests
+          python3 -m pip install ansible-core<2.17 ansible-lint molecule molecule-docker pytest passlib requests
 
       - name: Run Molecule tests
         run: molecule test -s ${{ matrix.scenario }}
