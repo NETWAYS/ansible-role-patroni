@@ -40,6 +40,7 @@ jobs:
         distro:
           - debian11
           - debian12
+          - rockylinux8
           - rockylinux9
         scenario:
           #- patroni-default   #TODO
