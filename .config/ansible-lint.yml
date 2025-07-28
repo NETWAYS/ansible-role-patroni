@@ -1,0 +1,18 @@
+warn_list:
+  - schema[meta]
+  - name[missing]
+  - package-latest
+  - jinja[spacing]
+  - experimental  # all rules tagged as experimental
+  - key-order[task]  # Ensure specific order of keys in mappings.
+  - name[casing]
+  - 'risky-shell-pipe'
+  - var-naming[no-role-prefix] # remove when https://github.com/ansible/ansible-lint/discussions/3451 is done
+skip_list:
+  - '106'
+  - 'command-instead-of-module'
+  - 'role-name'
+  - 'line-length'
+  - 'package-latest'
+  - yaml  # Violations reported by yamllint.
+  - no-handler # backup of old certificates
