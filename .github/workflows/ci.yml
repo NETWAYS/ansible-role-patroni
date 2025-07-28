@@ -40,7 +40,6 @@ jobs:
           - debian12
           - rockylinux8
           - rockylinux9
-          - ubuntu2404
         scenario:
           #- patroni-default   #TODO
           - patroni-etcdv2-ssl

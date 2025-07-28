@@ -13,9 +13,6 @@ galaxy_info:
     version:
       - 8
       - 9
-  - name: Ubuntu
-    version:
-      - 24.04
   - name: Debian
     version:
       - 12
