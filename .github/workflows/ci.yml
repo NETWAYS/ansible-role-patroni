@@ -43,7 +43,7 @@ jobs:
           - ubuntu2404
         scenario:
           #- patroni-default   #TODO
-          #- patroni-etcdv2-ssl
+          - patroni-etcdv2-ssl
           #- patroni-etcdv3-nossl   # TODO
           - patroni-etcdv3-ssl
 
