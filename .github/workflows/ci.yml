@@ -42,7 +42,6 @@ jobs:
           - rockylinux9
         scenario:
           - patroni-etcdv2-ssl
-          #- patroni-etcdv3-nossl   # TODO
           - patroni-etcdv3-ssl
 
     steps:
