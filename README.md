@@ -10,9 +10,13 @@ An Ansible role which installs and configures [Patroni](https://github.com/zalan
 
 This role requires root privileges, so tell ansible to use `become: true` in any [convenient way](http://docs.ansible.com/ansible/latest/become.html) for you.
 
-* Ansible Core > 2.16
+We are testing the following distributions:
 
-Ansible Core 2.17 and above won't be able to fulfill all tasks on RHEL/Rockylinux 8 due to mismatches in Python versions. Therefore RHEL/Rockylinux 8 is not supported.
+* Rockylinux 8 (although it's EOL, we need it for a certain project)
+* Rockylinux 9
+* Debian 12
+
+Because Rockylinux 8 is incompatible to some changes in Ansible > 2.16 and the Ansible collection `community.crypto` 3.0.0+ we only test with these versions pinned. The role *should* work with newer versions as well but right now we don't have tests for it.
 
 ## Role Variables
 

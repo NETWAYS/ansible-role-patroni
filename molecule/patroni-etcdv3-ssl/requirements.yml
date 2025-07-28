@@ -12,5 +12,6 @@ roles:
 
 collections:
 
+# pin to < 3.0.0 because of compatibility issues with Rockylinux 8
   - name: community.crypto
     version: "<3.0.0"
