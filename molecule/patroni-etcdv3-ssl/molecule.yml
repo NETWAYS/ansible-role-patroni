@@ -30,7 +30,7 @@ platforms:
       - patroni
 provisioner:
   name: ansible
-  env:
-    ANSIBLE_VERBOSITY: 3
+  #env:
+  #  ANSIBLE_VERBOSITY: 3
 verifier:
   name: ansible
