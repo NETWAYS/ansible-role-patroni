@@ -22,6 +22,11 @@ Because Rockylinux 8 is incompatible to some changes in Ansible > 2.16 and the A
 
 Coming soon.
 
+### Note on Patroni API endpoint for HAProxy health checks
+
+Starting with Patroni version 4.0.0, the `/master` API endpoint has been deprecated and replaced by `/primary`.  
+To ensure compatibility with newer versions, the HAProxy health check is configured to use the `/primary` endpoint.
+
 ## Dependencies
 
 There are no dependencies for the role, but Patroni itself needs a DCS (Etcd, Consul, ZooKeeper or Exhibitor) to be installed and configured properly and it's your responsibility to make it up and running before using this role.
