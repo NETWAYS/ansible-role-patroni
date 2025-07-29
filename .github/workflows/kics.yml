@@ -16,6 +16,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'netways'
   merge_group:
   schedule:
     - cron: '15 6 * * 4'
