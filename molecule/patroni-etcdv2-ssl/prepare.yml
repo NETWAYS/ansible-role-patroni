@@ -37,7 +37,7 @@
       "listen-client-urls": "{{ 'https://' + etcd_ipv4_address + ':' + etcd_client_port + ',https://127.0.0.1:' + etcd_client_port }}"
       "peer-client-cert-auth": "true"            # Enable peer client cert authentication
       "client-cert-auth": "true"                 # Enable client cert authentication
-      "initial-cluster-token": "etcd-cluster-0"  # Initial cluster token for the etcd cluster during bootstrap.
+      "initial-cluster-token": "{{ lookup('password', '/opt/etcdpass length=8 chars=ascii_letters') }}"  # Initial cluster token for the etcd cluster during bootstrap.
       "initial-cluster-state": "new"             # Initial cluster state ('new' or 'existing')
       "data-dir": "{{ etcd_data_dir }}"          # etcd data directory (etcd database files so to say)
       "wal-dir": ""                              # Dedicated wal directory ("" means no separated WAL directory)
