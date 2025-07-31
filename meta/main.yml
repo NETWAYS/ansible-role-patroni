@@ -10,18 +10,12 @@ galaxy_info:
   min_ansible_version: "2.4"
   platforms:
   - name: EL
-    versions:
-    - "7"
-    - "8"
-    - "9"
-  - name: Ubuntu
-    versions:
-    - xenial
-    - bionic
+    version:
+      - 8
+      - 9
   - name: Debian
-    versions:
-    - jessie
-    - stretch
+    version:
+      - 12
   galaxy_tags:
   - clustering
   - postgresql
