@@ -33,6 +33,14 @@
 
 This role requires root privileges, so tell ansible to use `become: true` in any [convenient way](http://docs.ansible.com/ansible/latest/become.html) for you.
 
+We are testing the following distributions:
+
+* Rockylinux 8 (although it's EOL, we need it for a certain project)
+* Rockylinux 9
+* Debian 12
+
+Because Rockylinux 8 is incompatible to some changes in Ansible > 2.16 and the Ansible collection `community.crypto` 3.0.0+ we only test with these versions pinned. The role *should* work with newer versions as well but right now we don't have tests for it.
+
 ## Role Variables
 
 ### General
@@ -252,6 +260,11 @@ Read more here https://patroni.readthedocs.io/en/latest/SETTINGS.html#watchdog o
 - `patroni_haproxy_leader_listen_port`: HAProxy leader listen port. (**Default:** `5000`)
 - `patroni_haproxy_replica_listen_port`: HAProxy replica listen port. (**Default:** `5001`)
 - `patroni_haproxy_stats_listen_port`: HAProxy stats listen port. (**Default:** `7000`)
+
+### Note on Patroni API endpoint for HAProxy health checks
+
+Starting with Patroni version 4.0.0, the `/master` API endpoint has been deprecated and replaced by `/primary`.  
+To ensure compatibility with newer versions, the HAProxy health check is configured to use the `/primary` endpoint.
 
 ## Dependencies
 

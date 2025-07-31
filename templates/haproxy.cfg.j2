@@ -18,7 +18,7 @@ listen stats
 
 listen master
         bind *:{{ patroni_haproxy_leader_listen_port }}
-        option httpchk OPTIONS /master
+        option httpchk OPTIONS /primary
         http-check expect status 200
         default-server inter 3s fall 3 rise 2 on-marked-down shutdown-sessions
 {% for server in patroni_haproxy_servers %}
