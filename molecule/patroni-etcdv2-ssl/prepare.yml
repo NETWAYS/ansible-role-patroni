@@ -75,6 +75,9 @@
       file:
         path: /etc/udev/rules.d
         state: directory
+        mode: 0755
+        owner: root
+        group: root
       when:
         - ansible_os_family == "RedHat" and ansible_distribution_major_version == "8" or
           ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
