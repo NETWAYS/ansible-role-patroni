@@ -4,6 +4,10 @@
   hosts: all
   tasks:
 
+    - name: Install curl for API interaction
+      package:
+        name: curl
+
     - name: Verify etcd has a leader
       shell: >
         curl https://127.0.0.1:2379/metrics
