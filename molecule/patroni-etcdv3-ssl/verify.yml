@@ -80,4 +80,4 @@
     - name: Fail if Patroni node instance-2 is not running
       fail:
         msg: "Fail: instance-2 is not running"
-      when: 'not "running" in instance_2_status.stdout'
+      when: instance_2_status.stdout is not search("running|streaming")
