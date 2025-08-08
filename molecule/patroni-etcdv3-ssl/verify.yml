@@ -58,6 +58,7 @@
       fail:
         msg: "Fail: instance-1 is not running"
       when: 'not "running" in instance_1_status.stdout'
+      when: instance_1_status.stdout is not search("running|streaming")
 
     - name: Verify Patroni instance-2 is running
       shell: >
