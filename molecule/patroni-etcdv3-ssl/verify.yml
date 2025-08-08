@@ -4,6 +4,11 @@
   hosts: all
   tasks:
 
+    - name: Remove curl-minimal
+      package:
+        name: curl-minimal
+        state: absent
+
     - name: Install curl for package interaction
       package:
         name: curl
