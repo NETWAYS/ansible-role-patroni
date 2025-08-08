@@ -5,16 +5,16 @@
   tasks:
 
     - name: Remove curl-minimal
-      package:
+      ansible.builtin.package:
         name: curl-minimal
         state: absent
 
     - name: Install curl for package interaction
-      package:
+      ansible.builtin.package:
         name: curl
 
     - name: Verify etcd has a leader
-      shell: >
+      ansible.builtin.shell: >
         curl https://127.0.0.1:2379/metrics
         --cert /opt/certs-etcd/{{ inventory_hostname }}-etcd-server.crt
         --key /opt/certs-etcd/{{ inventory_hostname }}.key -ks \
@@ -22,17 +22,17 @@
         | tail -n1
       register: etcd_has_leader
 
-    - name:
-      debug:
+    - name: Show status of etcd leader
+      ansible.builtin.debug:
         msg: "{{ etcd_has_leader }}"
 
     - name: Fail etcd cluster has no leader
-      fail:
+      ansible.builtin.fail:
         msg: "Fail: Cluster has no leader"
       when: 'not "etcd_server_has_leader 1" in etcd_has_leader.stdout'
 
     - name: Verify Patroni instance-1 is running
-      shell: >
+      ansible.builtin.shell: >
         patronictl
         -c /etc/patroni/{{ inventory_hostname }}.yml
         topology
@@ -40,28 +40,28 @@
         grep instance-1
       register: instance_1_status
 
-    - name:
-      debug:
+    - name: Show output of patronictl topology for instance-1
+      ansible.builtin.debug:
         msg: "{{ instance_1_status }}"
 
 # Remove comments to add journal logs for debugging
 #    - name: Get journalctl -xe
-#      shell: >
+#      ansible.builtin.shell: >
 #        journalctl -xe
 #        | tail -n100
 #      register: journalctl
 
-#    - name:
-#      debug:
+#    - name: Show last 100 lines of journalctl
+#      ansible.builtin.debug:
 #        msg: "{{ journalctl.stdout_lines }}"
 
     - name: Fail if Patroni node instance-1 is not running
-      fail:
+      ansible.builtin.fail:
         msg: "Fail: instance-1 is not running"
       when: instance_1_status.stdout is not search("running|streaming")
 
     - name: Verify Patroni instance-2 is running
-      shell: >
+      ansible.builtin.shell: >
         patronictl
         -c /etc/patroni/{{ inventory_hostname }}.yml
         topology
@@ -69,22 +69,22 @@
         grep instance-2
       register: instance_2_status
 
-    - name:
-      debug:
+    - name: Show output of patronictl topology for instance-2
+      ansible.builtin.debug:
         msg: "{{ instance_2_status }}"
 
 # Remove comments to add journal logs for debugging
 #    - name: Get journalctl -xe
-#      shell: >
+#      ansible.builtin.shell: >
 #        journalctl -xe
 #        | tail -n100
 #      register: journalctl
 
-#    - name:
-#      debug:
+#    - name: Show last 100 lines of journalctl
+#      ansible.builtin.debug:
 #        msg: "{{ journalctl.stdout_lines }}"
 
     - name: Fail if Patroni node instance-2 is not running
-      fail:
+      ansible.builtin.fail:
         msg: "Fail: instance-2 is not running"
       when: instance_2_status.stdout is not search("running|streaming")
