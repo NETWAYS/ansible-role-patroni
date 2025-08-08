@@ -73,15 +73,16 @@
       debug:
         msg: "{{ instance_2_status }}"
 
-    - name: Get journalctl -xe
-      shell: >
-        journalctl -xe
-        | tail -n100
-      register: journalctl
+# Remove comments to add journal logs for debugging
+#    - name: Get journalctl -xe
+#      shell: >
+#        journalctl -xe
+#        | tail -n100
+#      register: journalctl
 
-    - name:
-      debug:
-        msg: "{{ journalctl.stdout_lines }}"
+#    - name:
+#      debug:
+#        msg: "{{ journalctl.stdout_lines }}"
 
     - name: Fail if Patroni node instance-2 is not running
       fail:
