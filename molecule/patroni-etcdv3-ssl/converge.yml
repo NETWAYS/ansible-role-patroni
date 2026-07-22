@@ -47,14 +47,19 @@
         patroni_postgresql_version: 9
       when: ansible_os_family == "Debian" and ansible_distribution_major_version == "9"
 
+    - name: "Set PostgreSQL major version by OS [Debian 12]"
+      set_fact:
+        patroni_postgresql_version: 16
+      when: ansible_os_family == "Debian" and ansible_distribution_major_version == "12"
+
     - name: "Set PostgreSQL major version by OS [Rockylinux 8]"
       set_fact:
-        patroni_postgresql_version: 13
+        patroni_postgresql_version: 16
       when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "8"
 
     - name: "Set PostgreSQL major version by OS [Rockylinux 9]"
       set_fact:
-        patroni_postgresql_version: 13
+        patroni_postgresql_version: 16
       when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
 
     - name: "Include Patroni"
