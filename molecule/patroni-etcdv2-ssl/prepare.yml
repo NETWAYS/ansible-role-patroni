@@ -104,11 +104,13 @@
       ansible.builtin.lineinfile:
         path: /etc/hosts
         line: "{{ hostvars['instance-1']['ansible_default_ipv4']['address'] }} instance-1"
+        unsafe_writes: true
 
     - name: Add instance-2 to /etc/hosts
       ansible.builtin.lineinfile:
         path: /etc/hosts
         line: "{{ hostvars['instance-2']['ansible_default_ipv4']['address'] }} instance-2"
+        unsafe_writes: true
 
     - name: Add patroni group
       group:
