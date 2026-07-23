@@ -35,6 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint
     strategy:
+      fail-fast: false
       matrix:
         distro:
           - debian12
