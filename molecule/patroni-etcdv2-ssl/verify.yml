@@ -34,11 +34,9 @@
     - name: Verify Patroni instance-1 is running
       ansible.builtin.shell: |
         set -o pipefail
-        patronictl
-        -c /etc/patroni/{{ inventory_hostname }}.yml
-        topology
-        |
-        grep instance-1
+        patronictl \
+          -c /etc/patroni/{{ inventory_hostname }}.yml \
+          topology | grep instance-1
       args:
         executable: /bin/bash
       register: instance_1_status
@@ -67,11 +65,9 @@
     - name: Verify Patroni instance-2 is running
       ansible.builtin.shell: |
         set -o pipefail
-        patronictl
-        -c /etc/patroni/{{ inventory_hostname }}.yml
-        topology
-        |
-        grep instance-2
+        patronictl \
+          -c /etc/patroni/{{ inventory_hostname }}.yml \
+          topology | grep instance-2
       args:
         executable: /bin/bash
       register: instance_2_status
