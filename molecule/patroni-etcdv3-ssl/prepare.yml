@@ -36,6 +36,30 @@
         update_cache: yes
       when: ansible_os_family == "RedHat"
 
+    # postgresqlNN-devel pulls in perl(IPC::Run), which lives in EPEL and
+    # requires the CRB/PowerTools repository to be enabled.
+    - name: Install dnf-plugins-core
+      ansible.builtin.package:
+        name: dnf-plugins-core
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Enable CRB repository (EL9)
+      ansible.builtin.command: dnf config-manager --set-enabled crb  # noqa: command-instead-of-module
+      changed_when: false
+      when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
+
+    - name: Enable PowerTools repository (EL8)
+      ansible.builtin.command: dnf config-manager --set-enabled powertools  # noqa: command-instead-of-module
+      changed_when: false
+      when: ansible_os_family == "RedHat" and ansible_distribution_major_version == "8"
+
+    - name: Install EPEL release
+      ansible.builtin.package:
+        name: epel-release
+        state: present
+      when: ansible_os_family == "RedHat"
+
     #- name: Install required packages for EL 7
     #  package:
     #    name:
@@ -73,10 +97,16 @@
           ansible_os_family == "RedHat" and ansible_distribution_major_version == "9"
 
     - name: Add instance-1 to /etc/hosts
-      ansible.builtin.shell: echo "{{ hostvars['instance-1']['ansible_default_ipv4']['address'] }} instance-1" >> /etc/hosts
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        line: "{{ hostvars['instance-1']['ansible_default_ipv4']['address'] }} instance-1"
+        unsafe_writes: true
 
     - name: Add instance-2 to /etc/hosts
-      ansible.builtin.shell: echo "{{ hostvars['instance-2']['ansible_default_ipv4']['address'] }} instance-2" >> /etc/hosts
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        line: "{{ hostvars['instance-2']['ansible_default_ipv4']['address'] }} instance-2"
+        unsafe_writes: true
 
     - name: Add patroni group
       group:
