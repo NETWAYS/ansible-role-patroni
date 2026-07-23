@@ -34,7 +34,11 @@
     - name: Verify Patroni instance-1 is running
       ansible.builtin.shell: |
         set -o pipefail
-        patronictl -c /etc/patroni/{{ inventory_hostname }}.yml topology | grep instance-1
+        patronictl
+        -c /etc/patroni/{{ inventory_hostname }}.yml
+        topology
+        |
+        grep instance-1
       args:
         executable: /bin/bash
       register: instance_1_status
