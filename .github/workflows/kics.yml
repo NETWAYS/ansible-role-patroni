@@ -25,12 +25,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Mkdir results-dir
         # make sure results dir is created
         run: mkdir -p results-dir
       - name: run kics Scan
-        uses: Checkmarx/kics-github-action@c11ca46d31795a2f186f1af610d121e3bcd647a0 #v2.1.14
+        uses: Checkmarx/kics-github-action@05aa5eb70eede1355220f4ca5238d96b397e30a6 #v2.1.20
         with:
           # path: 'roles,plugins'
           path: '.'
