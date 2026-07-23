@@ -24,7 +24,6 @@
     state: "{{ item.state }}"
     umask: "{{ item.umask }}"
     executable: "{{ item.executable }}"
-    extra_args: "{{ item.extra_args | default(omit) }}"
   with_items:
     - "{{ patroni_pip_packages }}"
   when: patroni_install_from_pip
